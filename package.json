@@ -1,0 +1,40 @@
+{
+  "name": "game-of-thrones-map",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "extract": "node scripts/extractHtml.js",
+    "mirror": "node scripts/mirrorAssets.js",
+    "placeholders": "node scripts/generatePlaceholders.js",
+    "update:original": "node scripts/updateOriginalHtml.js",
+    "update:seo": "node scripts/updateSeoAssets.js",
+    "capture": "node scripts/captureScreenshots.js",
+    "compare": "node scripts/compareScreenshots.js",
+    "diff:analyze": "node scripts/analyzeRawDiff.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "jpeg-js": "^0.4.4",
+    "next": "^14.2.33",
+    "node-html-parser": "^7.0.1",
+    "pngjs": "^7.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.2",
+    "autoprefixer": "^10.4.21",
+    "pixelmatch": "^7.1.0",
+    "playwright": "^1.56.1",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.9.3"
+  }
+}

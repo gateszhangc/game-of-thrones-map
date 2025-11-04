@@ -1,0 +1,1005 @@
+{
+  "timestamp": "2025-11-04T15:20:13.648Z",
+  "url": "https://maps.wikiofthrones.com/",
+  "title": "Game Of Thrones Interactive Map",
+  "dom": {
+    "app": {},
+    "map": {
+      "className": "map-container leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom",
+      "dimensions": {
+        "width": 1536,
+        "height": 730
+      },
+      "children": [
+        {
+          "tagName": "DIV",
+          "className": "leaflet-pane leaflet-map-pane"
+        },
+        {
+          "tagName": "DIV",
+          "className": "leaflet-control-container"
+        }
+      ]
+    },
+    "ui": {
+      "[class*='search']": [
+        {
+          "tagName": "DIV",
+          "className": "search-container",
+          "id": "",
+          "visible": true,
+          "position": "absolute",
+          "dimensions": {
+            "width": 69,
+            "height": 64
+          }
+        },
+        {
+          "tagName": "DIV",
+          "className": "search-bar",
+          "id": "",
+          "visible": true,
+          "position": "static",
+          "dimensions": {
+            "width": 69,
+            "height": 60
+          }
+        },
+        {
+          "tagName": "INPUT",
+          "className": "search-input",
+          "id": "",
+          "visible": true,
+          "position": "static",
+          "dimensions": {
+            "width": 69,
+            "height": 60
+          }
+        },
+        {
+          "tagName": "DIV",
+          "className": "search-results",
+          "id": "",
+          "visible": true,
+          "position": "static",
+          "dimensions": {
+            "width": 69,
+            "height": 0
+          }
+        }
+      ],
+      "[class*='info']": [
+        {
+          "tagName": "DIV",
+          "className": "info-container",
+          "id": "",
+          "visible": true,
+          "position": "absolute",
+          "dimensions": {
+            "width": 500,
+            "height": 438
+          }
+        },
+        {
+          "tagName": "DIV",
+          "className": "info-title",
+          "id": "",
+          "visible": true,
+          "position": "fixed",
+          "dimensions": {
+            "width": 500,
+            "height": 80
+          }
+        },
+        {
+          "tagName": "DIV",
+          "className": "info-body",
+          "id": "",
+          "visible": true,
+          "position": "relative",
+          "dimensions": {
+            "width": 500,
+            "height": 350
+          }
+        },
+        {
+          "tagName": "DIV",
+          "className": "info-content-container",
+          "id": "",
+          "visible": true,
+          "position": "static",
+          "dimensions": {
+            "width": 485,
+            "height": 24
+          }
+        },
+        {
+          "tagName": "DIV",
+          "className": "info-content",
+          "id": "",
+          "visible": true,
+          "position": "static",
+          "dimensions": {
+            "width": 485,
+            "height": 24
+          }
+        },
+        {
+          "tagName": "DIV",
+          "className": "info-footer",
+          "id": "",
+          "visible": true,
+          "position": "static",
+          "dimensions": {
+            "width": 485,
+            "height": 78
+          }
+        }
+      ]
+    },
+    "data": {}
+  },
+  "react": {
+    "hasReact": false,
+    "reactVersion": null,
+    "rootElement": null,
+    "components": []
+  },
+  "leaflet": {
+    "version": "1.9.4",
+    "maps": [],
+    "layers": [
+      {
+        "className": "leaflet-pane leaflet-map-pane",
+        "zIndex": "400"
+      },
+      {
+        "className": "leaflet-pane leaflet-tile-pane",
+        "zIndex": "200"
+      },
+      {
+        "className": "leaflet-pane leaflet-overlay-pane",
+        "zIndex": "400"
+      },
+      {
+        "className": "leaflet-pane leaflet-shadow-pane",
+        "zIndex": "500"
+      },
+      {
+        "className": "leaflet-pane leaflet-marker-pane",
+        "zIndex": "600"
+      },
+      {
+        "className": "leaflet-pane leaflet-tooltip-pane",
+        "zIndex": "650"
+      },
+      {
+        "className": "leaflet-pane leaflet-popup-pane",
+        "zIndex": "700"
+      }
+    ],
+    "markers": [],
+    "controls": [
+      {
+        "className": "leaflet-control-zoom leaflet-bar leaflet-control",
+        "innerHTML": "<a class=\"leaflet-control-zoom-in\" href=\"#\" title=\"Zoom in\" role=\"button\" aria-label=\"Zoom in\" aria-"
+      },
+      {
+        "className": "leaflet-control-attribution leaflet-control",
+        "innerHTML": "<a href=\"https://leafletjs.com\" title=\"A JavaScript library for interactive maps\"><svg aria-hidden=\""
+      }
+    ]
+  },
+  "styles": {
+    "bodyStyles": {
+      "backgroundColor": "rgb(51, 51, 51)",
+      "fontFamily": "Lato, sans-serif",
+      "margin": "0px",
+      "padding": "0px",
+      "overflow": "hidden"
+    },
+    "appStyles": {},
+    "mapStyles": {
+      "position": "relative",
+      "width": "1536px",
+      "height": "729.6px",
+      "zIndex": "auto"
+    },
+    "customProperties": []
+  },
+  "globals": {
+    "libraries": {
+      "L": "object"
+    },
+    "customGlobals": [
+      {
+        "name": "self",
+        "type": "object"
+      },
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "customElements",
+        "type": "object"
+      },
+      {
+        "name": "history",
+        "type": "object"
+      },
+      {
+        "name": "navigation",
+        "type": "object"
+      },
+      {
+        "name": "locationbar",
+        "type": "object"
+      },
+      {
+        "name": "menubar",
+        "type": "object"
+      },
+      {
+        "name": "personalbar",
+        "type": "object"
+      },
+      {
+        "name": "scrollbars",
+        "type": "object"
+      },
+      {
+        "name": "statusbar",
+        "type": "object"
+      },
+      {
+        "name": "toolbar",
+        "type": "object"
+      },
+      {
+        "name": "status",
+        "type": "string"
+      },
+      {
+        "name": "closed",
+        "type": "boolean"
+      },
+      {
+        "name": "frames",
+        "type": "object"
+      },
+      {
+        "name": "length",
+        "type": "number"
+      },
+      {
+        "name": "top",
+        "type": "object"
+      },
+      {
+        "name": "opener",
+        "type": "object"
+      },
+      {
+        "name": "parent",
+        "type": "object"
+      },
+      {
+        "name": "frameElement",
+        "type": "object"
+      },
+      {
+        "name": "origin",
+        "type": "string"
+      },
+      {
+        "name": "external",
+        "type": "object"
+      },
+      {
+        "name": "screen",
+        "type": "object"
+      },
+      {
+        "name": "innerWidth",
+        "type": "number"
+      },
+      {
+        "name": "innerHeight",
+        "type": "number"
+      },
+      {
+        "name": "scrollX",
+        "type": "number"
+      },
+      {
+        "name": "pageXOffset",
+        "type": "number"
+      },
+      {
+        "name": "scrollY",
+        "type": "number"
+      },
+      {
+        "name": "pageYOffset",
+        "type": "number"
+      },
+      {
+        "name": "visualViewport",
+        "type": "object"
+      },
+      {
+        "name": "screenX",
+        "type": "number"
+      },
+      {
+        "name": "screenY",
+        "type": "number"
+      },
+      {
+        "name": "outerWidth",
+        "type": "number"
+      },
+      {
+        "name": "outerHeight",
+        "type": "number"
+      },
+      {
+        "name": "devicePixelRatio",
+        "type": "number"
+      },
+      {
+        "name": "event",
+        "type": "undefined"
+      },
+      {
+        "name": "clientInformation",
+        "type": "object"
+      },
+      {
+        "name": "screenLeft",
+        "type": "number"
+      },
+      {
+        "name": "screenTop",
+        "type": "number"
+      },
+      {
+        "name": "styleMedia",
+        "type": "object"
+      },
+      {
+        "name": "onsearch",
+        "type": "object"
+      },
+      {
+        "name": "trustedTypes",
+        "type": "object"
+      },
+      {
+        "name": "performance",
+        "type": "object"
+      },
+      {
+        "name": "onappinstalled",
+        "type": "object"
+      },
+      {
+        "name": "onbeforeinstallprompt",
+        "type": "object"
+      },
+      {
+        "name": "crypto",
+        "type": "object"
+      },
+      {
+        "name": "indexedDB",
+        "type": "object"
+      },
+      {
+        "name": "sessionStorage",
+        "type": "object"
+      },
+      {
+        "name": "localStorage",
+        "type": "object"
+      },
+      {
+        "name": "onbeforexrselect",
+        "type": "object"
+      },
+      {
+        "name": "onabort",
+        "type": "object"
+      },
+      {
+        "name": "onbeforeinput",
+        "type": "object"
+      },
+      {
+        "name": "onbeforematch",
+        "type": "object"
+      },
+      {
+        "name": "onbeforetoggle",
+        "type": "object"
+      },
+      {
+        "name": "onblur",
+        "type": "object"
+      },
+      {
+        "name": "oncancel",
+        "type": "object"
+      },
+      {
+        "name": "oncanplay",
+        "type": "object"
+      },
+      {
+        "name": "oncanplaythrough",
+        "type": "object"
+      },
+      {
+        "name": "onchange",
+        "type": "object"
+      },
+      {
+        "name": "onclick",
+        "type": "object"
+      },
+      {
+        "name": "onclose",
+        "type": "object"
+      },
+      {
+        "name": "oncommand",
+        "type": "object"
+      },
+      {
+        "name": "oncontentvisibilityautostatechange",
+        "type": "object"
+      },
+      {
+        "name": "oncontextlost",
+        "type": "object"
+      },
+      {
+        "name": "oncontextmenu",
+        "type": "object"
+      },
+      {
+        "name": "oncontextrestored",
+        "type": "object"
+      },
+      {
+        "name": "oncuechange",
+        "type": "object"
+      },
+      {
+        "name": "ondblclick",
+        "type": "object"
+      },
+      {
+        "name": "ondrag",
+        "type": "object"
+      },
+      {
+        "name": "ondragend",
+        "type": "object"
+      },
+      {
+        "name": "ondragenter",
+        "type": "object"
+      },
+      {
+        "name": "ondragleave",
+        "type": "object"
+      },
+      {
+        "name": "ondragover",
+        "type": "object"
+      },
+      {
+        "name": "ondragstart",
+        "type": "object"
+      },
+      {
+        "name": "ondrop",
+        "type": "object"
+      },
+      {
+        "name": "ondurationchange",
+        "type": "object"
+      },
+      {
+        "name": "onemptied",
+        "type": "object"
+      },
+      {
+        "name": "onended",
+        "type": "object"
+      },
+      {
+        "name": "onerror",
+        "type": "object"
+      },
+      {
+        "name": "onfocus",
+        "type": "object"
+      },
+      {
+        "name": "onformdata",
+        "type": "object"
+      },
+      {
+        "name": "oninput",
+        "type": "object"
+      },
+      {
+        "name": "oninvalid",
+        "type": "object"
+      },
+      {
+        "name": "onkeydown",
+        "type": "object"
+      },
+      {
+        "name": "onkeypress",
+        "type": "object"
+      },
+      {
+        "name": "onkeyup",
+        "type": "object"
+      },
+      {
+        "name": "onload",
+        "type": "object"
+      },
+      {
+        "name": "onloadeddata",
+        "type": "object"
+      },
+      {
+        "name": "onloadedmetadata",
+        "type": "object"
+      },
+      {
+        "name": "onloadstart",
+        "type": "object"
+      },
+      {
+        "name": "onmousedown",
+        "type": "object"
+      },
+      {
+        "name": "onmouseenter",
+        "type": "object"
+      },
+      {
+        "name": "onmouseleave",
+        "type": "object"
+      },
+      {
+        "name": "onmousemove",
+        "type": "object"
+      },
+      {
+        "name": "onmouseout",
+        "type": "object"
+      },
+      {
+        "name": "onmouseover",
+        "type": "object"
+      },
+      {
+        "name": "onmouseup",
+        "type": "object"
+      },
+      {
+        "name": "onmousewheel",
+        "type": "object"
+      },
+      {
+        "name": "onpause",
+        "type": "object"
+      },
+      {
+        "name": "onplay",
+        "type": "object"
+      },
+      {
+        "name": "onplaying",
+        "type": "object"
+      },
+      {
+        "name": "onprogress",
+        "type": "object"
+      },
+      {
+        "name": "onratechange",
+        "type": "object"
+      },
+      {
+        "name": "onreset",
+        "type": "object"
+      },
+      {
+        "name": "onresize",
+        "type": "object"
+      },
+      {
+        "name": "onscroll",
+        "type": "object"
+      },
+      {
+        "name": "onscrollend",
+        "type": "object"
+      },
+      {
+        "name": "onsecuritypolicyviolation",
+        "type": "object"
+      },
+      {
+        "name": "onseeked",
+        "type": "object"
+      },
+      {
+        "name": "onseeking",
+        "type": "object"
+      },
+      {
+        "name": "onselect",
+        "type": "object"
+      },
+      {
+        "name": "onslotchange",
+        "type": "object"
+      },
+      {
+        "name": "onstalled",
+        "type": "object"
+      },
+      {
+        "name": "onsubmit",
+        "type": "object"
+      },
+      {
+        "name": "onsuspend",
+        "type": "object"
+      },
+      {
+        "name": "ontimeupdate",
+        "type": "object"
+      },
+      {
+        "name": "ontoggle",
+        "type": "object"
+      },
+      {
+        "name": "onvolumechange",
+        "type": "object"
+      },
+      {
+        "name": "onwaiting",
+        "type": "object"
+      },
+      {
+        "name": "onwebkitanimationend",
+        "type": "object"
+      },
+      {
+        "name": "onwebkitanimationiteration",
+        "type": "object"
+      },
+      {
+        "name": "onwebkitanimationstart",
+        "type": "object"
+      },
+      {
+        "name": "onwebkittransitionend",
+        "type": "object"
+      },
+      {
+        "name": "onwheel",
+        "type": "object"
+      },
+      {
+        "name": "onauxclick",
+        "type": "object"
+      },
+      {
+        "name": "ongotpointercapture",
+        "type": "object"
+      },
+      {
+        "name": "onlostpointercapture",
+        "type": "object"
+      },
+      {
+        "name": "onpointerdown",
+        "type": "object"
+      },
+      {
+        "name": "onpointermove",
+        "type": "object"
+      },
+      {
+        "name": "onpointerup",
+        "type": "object"
+      },
+      {
+        "name": "onpointercancel",
+        "type": "object"
+      },
+      {
+        "name": "onpointerover",
+        "type": "object"
+      },
+      {
+        "name": "onpointerout",
+        "type": "object"
+      },
+      {
+        "name": "onpointerenter",
+        "type": "object"
+      },
+      {
+        "name": "onpointerleave",
+        "type": "object"
+      },
+      {
+        "name": "onselectstart",
+        "type": "object"
+      },
+      {
+        "name": "onselectionchange",
+        "type": "object"
+      },
+      {
+        "name": "onanimationend",
+        "type": "object"
+      },
+      {
+        "name": "onanimationiteration",
+        "type": "object"
+      },
+      {
+        "name": "onanimationstart",
+        "type": "object"
+      },
+      {
+        "name": "ontransitionrun",
+        "type": "object"
+      },
+      {
+        "name": "ontransitionstart",
+        "type": "object"
+      },
+      {
+        "name": "ontransitionend",
+        "type": "object"
+      },
+      {
+        "name": "ontransitioncancel",
+        "type": "object"
+      },
+      {
+        "name": "onafterprint",
+        "type": "object"
+      },
+      {
+        "name": "onbeforeprint",
+        "type": "object"
+      },
+      {
+        "name": "onbeforeunload",
+        "type": "object"
+      },
+      {
+        "name": "onhashchange",
+        "type": "object"
+      },
+      {
+        "name": "onlanguagechange",
+        "type": "object"
+      },
+      {
+        "name": "onmessage",
+        "type": "object"
+      },
+      {
+        "name": "onmessageerror",
+        "type": "object"
+      },
+      {
+        "name": "onoffline",
+        "type": "object"
+      },
+      {
+        "name": "ononline",
+        "type": "object"
+      },
+      {
+        "name": "onpagehide",
+        "type": "object"
+      },
+      {
+        "name": "onpageshow",
+        "type": "object"
+      },
+      {
+        "name": "onpopstate",
+        "type": "object"
+      },
+      {
+        "name": "onrejectionhandled",
+        "type": "object"
+      },
+      {
+        "name": "onstorage",
+        "type": "object"
+      },
+      {
+        "name": "onunhandledrejection",
+        "type": "object"
+      },
+      {
+        "name": "onunload",
+        "type": "object"
+      },
+      {
+        "name": "isSecureContext",
+        "type": "boolean"
+      },
+      {
+        "name": "crossOriginIsolated",
+        "type": "boolean"
+      },
+      {
+        "name": "scheduler",
+        "type": "object"
+      },
+      {
+        "name": "caches",
+        "type": "object"
+      },
+      {
+        "name": "cookieStore",
+        "type": "object"
+      },
+      {
+        "name": "ondevicemotion",
+        "type": "object"
+      },
+      {
+        "name": "ondeviceorientation",
+        "type": "object"
+      },
+      {
+        "name": "ondeviceorientationabsolute",
+        "type": "object"
+      },
+      {
+        "name": "onpointerrawupdate",
+        "type": "object"
+      },
+      {
+        "name": "documentPictureInPicture",
+        "type": "object"
+      },
+      {
+        "name": "sharedStorage",
+        "type": "object"
+      },
+      {
+        "name": "originAgentCluster",
+        "type": "boolean"
+      },
+      {
+        "name": "viewport",
+        "type": "object"
+      },
+      {
+        "name": "onpageswap",
+        "type": "object"
+      },
+      {
+        "name": "onpagereveal",
+        "type": "object"
+      },
+      {
+        "name": "credentialless",
+        "type": "boolean"
+      },
+      {
+        "name": "fence",
+        "type": "object"
+      },
+      {
+        "name": "launchQueue",
+        "type": "object"
+      },
+      {
+        "name": "speechSynthesis",
+        "type": "object"
+      },
+      {
+        "name": "onscrollsnapchange",
+        "type": "object"
+      },
+      {
+        "name": "onscrollsnapchanging",
+        "type": "object"
+      },
+      {
+        "name": "GoogleAnalyticsObject",
+        "type": "string"
+      },
+      {
+        "name": "google_tag_data",
+        "type": "object"
+      },
+      {
+        "name": "gaplugins",
+        "type": "object"
+      },
+      {
+        "name": "gaGlobal",
+        "type": "object"
+      },
+      {
+        "name": "gaData",
+        "type": "object"
+      },
+      {
+        "name": "dataLayer",
+        "type": "object"
+      },
+      {
+        "name": "L",
+        "type": "object"
+      },
+      {
+        "name": "_leaflet_events",
+        "type": "object"
+      },
+      {
+        "name": "ctrl",
+        "type": "object"
+      },
+      {
+        "name": "google_tag_manager",
+        "type": "object"
+      }
+    ]
+  },
+  "events": {
+    "clickHandlers": [
+      {
+        "tagName": "A",
+        "className": "leaflet-control-zoom-in",
+        "text": "+"
+      },
+      {
+        "tagName": "A",
+        "className": "leaflet-control-zoom-out leaflet-disabled",
+        "text": "−"
+      },
+      {
+        "tagName": "A",
+        "className": "",
+        "text": "Leaflet"
+      }
+    ],
+    "inputHandlers": [
+      {
+        "type": "text",
+        "name": "search",
+        "placeholder": "Search...",
+        "className": "search-input"
+      }
+    ],
+    "mapHandlers": []
+  }
+}
