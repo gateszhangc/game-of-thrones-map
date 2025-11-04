@@ -1,0 +1,312 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cinzel', serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
+    color: #e5e7eb;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 头部样式 */
+.site-header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid #8b5a3c;
+    backdrop-filter: blur(10px);
+}
+
+.site-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #d4af37;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1em;
+}
+
+.site-subtitle {
+    font-size: 1.2rem;
+    color: #a0a0a0;
+    font-family: 'MedievalSharp', cursive;
+    font-weight: 400;
+}
+
+/* 主要内容区域 */
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* 地图容器 */
+.map-container {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    border: 2px solid #8b5a3c;
+    margin-bottom: 2rem;
+}
+
+.map-wrapper {
+    position: relative;
+    display: flex;
+    gap: 2rem;
+}
+
+#got-map {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+    cursor: grab;
+    transition: transform 0.3s ease;
+}
+
+#got-map:active {
+    cursor: grabbing;
+}
+
+/* 城市标记样式 */
+.city-marker {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.city-marker:hover circle {
+    r: 12;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+}
+
+.city-marker:hover text {
+    font-weight: bold;
+    fill: #fff;
+}
+
+/* 信息面板 */
+.info-panel {
+    flex: 1;
+    min-width: 250px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 1px solid #8b5a3c;
+    height: fit-content;
+}
+
+.info-panel h3 {
+    color: #d4af37;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+#location-info {
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+#location-info h4 {
+    color: #f59e0b;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+#location-info p {
+    color: #e5e7eb;
+    margin-bottom: 0.8rem;
+}
+
+/* 控制按钮 */
+.controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.controls button {
+    background: linear-gradient(135deg, #8b5a3c 0%, #6b4226 100%);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.controls button:hover {
+    background: linear-gradient(135deg, #a06a3c 0%, #8b5226 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
+}
+
+.controls button:active {
+    transform: translateY(0);
+}
+
+.controls select {
+    background: rgba(0, 0, 0, 0.7);
+    color: #e5e7eb;
+    border: 2px solid #8b5a3c;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.controls select:hover {
+    background: rgba(139, 90, 60, 0.3);
+    border-color: #a06a3c;
+}
+
+/* 页脚 */
+.site-footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-top: 2px solid #8b5a3c;
+    color: #a0a0a0;
+    font-family: 'MedievalSharp', cursive;
+}
+
+/* 动画效果 */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.city-marker.active circle {
+    animation: pulse 2s infinite;
+    fill: #f59e0b;
+}
+
+/* 响应式设计 */
+@media (max-width: 968px) {
+    .site-title {
+        font-size: 2rem;
+    }
+
+    .site-subtitle {
+        font-size: 1rem;
+    }
+
+    .main-content {
+        padding: 1rem;
+    }
+
+    .map-wrapper {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .info-panel {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .controls {
+        gap: 0.5rem;
+    }
+
+    .controls button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .controls select {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .site-header {
+        padding: 1rem 0.5rem;
+    }
+
+    .site-title {
+        font-size: 1.8rem;
+    }
+
+    .map-container {
+        padding: 1rem;
+    }
+
+    .controls {
+        justify-content: stretch;
+    }
+
+    .controls button,
+    .controls select {
+        flex: 1;
+        min-width: 120px;
+    }
+}
+
+/* 加载动画 */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.loading::after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    border: 3px solid #8b5a3c;
+    border-top: 3px solid #d4af37;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 提示框样式 */
+.tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-family: 'MedievalSharp', cursive;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border: 1px solid #8b5a3c;
+}
+
+.tooltip.show {
+    opacity: 1;
+}
