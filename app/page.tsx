@@ -8,7 +8,7 @@ interface NavLink {
 
 const NAV_LINKS: NavLink[] = [
   { label: "Home", href: "/", isCurrent: true },
-  { label: "Locations", href: "/", isCurrent: false },
+  { label: "Locations", href: "/#interactive-map", isCurrent: false },
   { label: "Great Houses", href: "/", isCurrent: false },
   { label: "About", href: "/", isCurrent: false },
   { label: "Contact", href: "/contact", isCurrent: false }
