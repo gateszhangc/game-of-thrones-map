@@ -7,7 +7,7 @@ interface HouseCardProps {
 export default function HouseCard({ house }: HouseCardProps) {
   return (
     <article className="house-card">
-      <span className="house-sigil" aria-label={`${house.name}族徽`}>
+      <span className="house-sigil" aria-label={`${house.name} sigil`}>
         {house.sigil}
       </span>
       
@@ -17,11 +17,11 @@ export default function HouseCard({ house }: HouseCardProps) {
       
       <div className="house-info">
         <div className="house-location">
-          <span aria-label="驻地">📍</span>
+          <span aria-label="Seat">📍</span>
           <span>{house.seat}</span>
         </div>
         <div className="house-region">
-          <span aria-label="地区">🗺️</span>
+          <span aria-label="Region">🗺️</span>
           <span>{house.region}</span>
         </div>
       </div>

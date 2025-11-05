@@ -4,8 +4,8 @@ import HouseCard from './HouseCard';
 import { houses } from './data';
 
 export const metadata: Metadata = {
-  title: '伟大家族 - 权力的游戏地图',
-  description: '了解维斯特洛和厄索斯的贵族家族。探索他们的族徽、族语、祖传驻地，以及塑造王国的伟大家族。',
+  title: 'Great Houses - Game of Thrones Map',
+  description: 'Learn about the noble houses of Westeros and Essos. Discover their sigils, words, ancestral seats, and the great families that shape the realm.',
 };
 
 export default function HousesPage() {
@@ -28,30 +28,30 @@ export default function HousesPage() {
       </header>
 
       <main>
-        {/* 英雄区 */}
+        {/* Hero Section */}
         <section className="houses-hero">
           <div className="houses-hero-content">
-            <h1 className="houses-hero-title">维斯特洛的伟大家族</h1>
-            <p className="houses-hero-subtitle">塑造七大王国的贵族家族</p>
+            <h1 className="houses-hero-title">The Great Houses of Westeros</h1>
+            <p className="houses-hero-subtitle">Noble families that shaped the Seven Kingdoms</p>
             <div className="ornament"></div>
           </div>
         </section>
 
-        {/* 家族网格区 */}
+        {/* Houses Grid Section */}
         <section className="houses-grid">
           {houses.map((house) => (
             <HouseCard key={house.name} house={house} />
           ))}
         </section>
 
-        {/* CTA 区域 */}
+        {/* CTA Section */}
         <section className="houses-cta">
           <div className="cta-buttons">
             <Link href="/#interactive-map" className="cta-button">
-              探索交互式地图
+              Explore Interactive Map
             </Link>
             <Link href="/battles" className="cta-button">
-              查看历史战役
+              View Historic Battles
             </Link>
           </div>
         </section>

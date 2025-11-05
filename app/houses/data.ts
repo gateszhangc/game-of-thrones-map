@@ -1,77 +1,77 @@
 import { House } from './types';
 
-// 维斯特洛九大家族数据
+// Great Houses of Westeros data
 export const houses: House[] = [
   {
-    name: '史塔克家族',
-    words: '凛冬将至',
-    seat: '临冬城',
-    region: '北境',
+    name: 'House Stark',
+    words: 'Winter Is Coming',
+    seat: 'Winterfell',
+    region: 'The North',
     sigil: '🐺',
-    description: '北境古老而荣耀的统治者，以坚定不移的正义感和忠诚著称。'
+    description: 'The ancient and honorable rulers of the North, known for their unwavering sense of justice and loyalty.'
   },
   {
-    name: '兰尼斯特家族',
-    words: '听我怒吼',
-    seat: '凯岩城',
-    region: '西境',
+    name: 'House Lannister',
+    words: 'Hear Me Roar',
+    seat: 'Casterly Rock',
+    region: 'The Westerlands',
     sigil: '🦁',
-    description: '维斯特洛最富有的家族，以狡猾、野心和凯岩城的金矿闻名。'
+    description: 'The wealthiest family in Westeros, known for their cunning, ambition, and the gold mines of Casterly Rock.'
   },
   {
-    name: '坦格利安家族',
-    words: '血火同源',
-    seat: '龙石岛',
-    region: '王领',
+    name: 'House Targaryen',
+    words: 'Fire and Blood',
+    seat: 'Dragonstone',
+    region: 'The Crownlands',
     sigil: '🐉',
-    description: '维斯特洛的前王室，源自古瓦雷利亚，是唯一在末日浩劫中幸存的龙王家族。'
+    description: 'The former royal house of Westeros, originally from Old Valyria, the only dragonlord family to survive the Doom.'
   },
   {
-    name: '拜拉席恩家族',
-    words: '怒火燎原',
-    seat: '风息堡',
-    region: '风暴地',
+    name: 'House Baratheon',
+    words: 'Ours is the Fury',
+    seat: 'Storm\'s End',
+    region: 'The Stormlands',
     sigil: '🦌',
-    description: '由奥里斯·拜拉席恩建立，通过劳勃的叛乱夺取了铁王座。'
+    description: 'Founded by Orys Baratheon, seized the Iron Throne through Robert\'s Rebellion.'
   },
   {
-    name: '葛雷乔伊家族',
-    words: '强取胜于苦耕',
-    seat: '派克城',
-    region: '铁群岛',
+    name: 'House Greyjoy',
+    words: 'We Do Not Sow',
+    seat: 'Pyke',
+    region: 'The Iron Islands',
     sigil: '🦑',
-    description: '铁群岛的铁民统治者，以航海技术和古道掠夺传统闻名。'
+    description: 'Rulers of the ironborn of the Iron Islands, known for their seafaring skills and ancient reaving traditions.'
   },
   {
-    name: '提利尔家族',
-    words: '生生不息',
-    seat: '高庭',
-    region: '河湾地',
+    name: 'House Tyrell',
+    words: 'Growing Strong',
+    seat: 'Highgarden',
+    region: 'The Reach',
     sigil: '🌹',
-    description: '肥沃河湾地的领主，以财富、骑士精神和政治手腕著称。'
+    description: 'Lords of the fertile Reach, known for their wealth, chivalry, and political cunning.'
   },
   {
-    name: '马泰尔家族',
-    words: '不屈不挠',
-    seat: '阳戟城',
-    region: '多恩',
+    name: 'House Martell',
+    words: 'Unbowed, Unbent, Unbroken',
+    seat: 'Sunspear',
+    region: 'Dorne',
     sigil: '☀️',
-    description: '多恩的骄傲统治者，最后一个加入七大王国的王国，以独立性闻名。'
+    description: 'Proud rulers of Dorne, the last kingdom to join the Seven Kingdoms, known for their independence.'
   },
   {
-    name: '艾林家族',
-    words: '高如荣誉',
-    seat: '鹰巢城',
-    region: '谷地',
+    name: 'House Arryn',
+    words: 'As High as Honor',
+    seat: 'The Eyrie',
+    region: 'The Vale',
     sigil: '🦅',
-    description: '古老家族，从坚不可摧的鹰巢城统治，源自山地与谷地之王。'
+    description: 'Ancient house ruling from the impregnable Eyrie, descended from the Kings of Mountain and Vale.'
   },
   {
-    name: '徒利家族',
-    words: '家族，责任，荣誉',
-    seat: '奔流城',
-    region: '河间地',
+    name: 'House Tully',
+    words: 'Family, Duty, Honor',
+    seat: 'Riverrun',
+    region: 'The Riverlands',
     sigil: '🐟',
-    description: '河间地的领主，以战略位置和对家族纽带的承诺闻名。'
+    description: 'Lords of the Riverlands, known for their strategic position and commitment to family bonds.'
   }
 ];
