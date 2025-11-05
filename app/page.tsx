@@ -92,10 +92,6 @@ const CURRENT_YEAR = new Date().getFullYear();
 export default function Home() {
   return (
     <>
-      <a href="#main-content" className="skip-link">
-        Skip to main content
-      </a>
-
       <div className="page-wrapper">
         <header className="main-header" role="banner">
           <nav aria-label="Primary">
