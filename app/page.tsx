@@ -8,9 +8,9 @@ interface NavLink {
 
 const NAV_LINKS: NavLink[] = [
   { label: "Home", href: "/", isCurrent: true },
-  { label: "Locations", href: "/locations", isCurrent: false },
-  { label: "Great Houses", href: "/houses", isCurrent: false },
-  { label: "About", href: "/about", isCurrent: false },
+  { label: "Locations", href: "/", isCurrent: false },
+  { label: "Great Houses", href: "/", isCurrent: false },
+  { label: "About", href: "/", isCurrent: false },
   { label: "Contact", href: "/contact", isCurrent: false }
 ];
 
@@ -108,7 +108,7 @@ export default function Home() {
 
             <ul className="nav-links">
               {NAV_LINKS.map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <Link href={link.href} aria-current={link.isCurrent ? "page" : undefined}>
                     {link.label}
                   </Link>
