@@ -1916,3 +1916,567 @@ section {
     font-size: 1.2rem;
   }
 }
+
+
+/* ============================================
+   Region Pages Styles
+   ============================================ */
+
+/* Region Hero Section */
+.region-hero {
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.region-hero-westeros {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: var(--light-text);
+}
+
+.region-hero-essos {
+    background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);
+    color: var(--light-text);
+}
+
+.region-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.region-hero-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--light-text);
+}
+
+.region-hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Region Overview Section */
+.region-overview {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.overview-item {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.overview-item:hover {
+    transform: translateY(-5px);
+}
+
+.overview-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.overview-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.overview-item p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Interactive Map Section */
+.interactive-map-section {
+    padding: 60px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.map-container {
+    position: relative;
+    margin-top: 40px;
+}
+
+.got-map-iframe {
+    width: 100%;
+    height: 600px;
+    border: 3px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--dark-bg);
+}
+
+.map-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+    background: var(--card-bg);
+    border: 3px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--border-color);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.map-fallback {
+    text-align: center;
+}
+
+.fallback-map-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.map-error-message {
+    margin-top: 20px;
+    color: var(--secondary-color);
+    font-style: italic;
+}
+
+.map-attribution {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.map-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.map-link:hover {
+    text-decoration: underline;
+}
+
+/* Region Section */
+.region-section {
+    padding: 60px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.region-section-header {
+    margin-bottom: 40px;
+}
+
+.region-section-title {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.region-section-description {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.region-section-info {
+    display: flex;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+.info-item {
+    font-size: 0.95rem;
+}
+
+.info-item strong {
+    color: var(--primary-color);
+}
+
+/* Locations Grid */
+.locations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Location Card */
+.location-card {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.location-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--shadow-dark);
+}
+
+.location-card-westeros {
+    border-left: 4px solid #3498db;
+}
+
+.location-card-essos {
+    border-left: 4px solid #f39c12;
+}
+
+.location-card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.location-icon {
+    font-size: 2rem;
+}
+
+.location-name {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.location-card-body {
+    flex: 1;
+}
+
+.location-description {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.location-significance {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+.location-significance strong {
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.location-significance p {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--secondary-color);
+}
+
+.location-card-footer {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+.location-type {
+    display: inline-block;
+    padding: 5px 12px;
+    background: var(--primary-color);
+    color: var(--light-text);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Related Pages Section */
+.related-pages {
+    padding: 60px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: var(--parchment);
+}
+
+.related-pages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.related-page-card {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.related-page-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--shadow-dark);
+}
+
+.related-page-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.related-page-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.related-page-card p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.related-page-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: var(--light-text);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.related-page-link:hover {
+    background: var(--hover-color);
+}
+
+/* Section Header (Shared) */
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+
+/* ============================================
+   Responsive Styles for Region Pages
+   ============================================ */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    .overview-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .locations-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .related-pages-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .region-hero-title {
+        font-size: 2.5rem;
+    }
+
+    .region-section-title {
+        font-size: 2rem;
+    }
+}
+
+/* Mobile (< 768px) */
+@media (max-width: 768px) {
+    .region-hero {
+        padding: 60px 15px;
+    }
+
+    .region-hero-title {
+        font-size: 2rem;
+    }
+
+    .region-hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .overview-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .overview-item {
+        padding: 20px;
+    }
+
+    .region-section {
+        padding: 40px 15px;
+    }
+
+    .region-section-title {
+        font-size: 1.75rem;
+    }
+
+    .region-section-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .locations-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .location-card {
+        padding: 20px;
+    }
+
+    .location-name {
+        font-size: 1.25rem;
+    }
+
+    .related-pages-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .related-page-card {
+        padding: 20px;
+    }
+
+    .got-map-iframe,
+    .map-loading {
+        height: 400px;
+    }
+
+    /* Ensure touch targets are at least 44x44px */
+    .related-page-link,
+    .map-link {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .location-card {
+        min-height: 44px;
+    }
+}
+
+/* Small Mobile (< 480px) */
+@media (max-width: 480px) {
+    .region-hero-title {
+        font-size: 1.5rem;
+    }
+
+    .region-hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .region-section-title {
+        font-size: 1.5rem;
+    }
+
+    .overview-icon {
+        font-size: 2rem;
+    }
+
+    .location-icon {
+        font-size: 1.5rem;
+    }
+
+    .related-page-icon {
+        font-size: 2rem;
+    }
+
+    .got-map-iframe,
+    .map-loading {
+        height: 300px;
+    }
+}
+
+
+/* ============================================
+   Accessibility Styles
+   ============================================ */
+
+/* Focus Indicators */
+a:focus,
+button:focus,
+.location-card:focus,
+.related-page-link:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Skip Navigation Link */
+.skip-nav {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: var(--light-text);
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-nav:focus {
+    top: 0;
+}
+
+/* High Contrast Text */
+.region-hero-title,
+.region-section-title,
+.location-name,
+.related-page-card h3 {
+    /* Ensure contrast ratio >= 4.5:1 */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Screen Reader Only Content */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
