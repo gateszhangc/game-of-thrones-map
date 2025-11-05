@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0.5rem;
+  z-index: 1000;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  background-color: #111827;
+  color: #f9fafb;
+  transition: left 0.2s ease;
+}
+
+.skip-link:focus-visible {
+  left: 1rem;
+  outline: 2px solid #facc15;
+  outline-offset: 4px;
+}

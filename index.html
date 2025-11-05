@@ -1,115 +1,242 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>权力的游戏 - 维斯特洛大陆地图</title>
+
+    <!-- 基础SEO -->
+    <title>Game of Thrones - Interactive Westeros Map |权力的游戏地图</title>
+    <meta name="description" content="Explore the interactive map of Westeros from Game of Thrones. Click on major cities like Winterfell, King's Landing, Casterly Rock for detailed information including ruling houses, culture, and history.">
+    <meta name="keywords" content="Game of Thrones, Westeros, map, Winterfell, King's Landing, Stark, Lannister, Targaryen, A Song of Ice and Fire, 权力的游戏, 维斯特洛, 地图, 临冬城, 君临城, 史塔克, 兰尼斯特, 坦格利安">
+    <meta name="author" content="Game of Thrones Map">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gateszhangc.github.io/game-of-thrones-map/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gateszhangc.github.io/game-of-thrones-map/">
+    <meta property="og:title" content="Game of Thrones - Interactive Westeros Map">
+    <meta property="og:description" content="Explore the interactive map of Westeros from Game of Thrones. Click on major cities like Winterfell, King's Landing, Casterly Rock for detailed information.">
+    <meta property="og:image" content="https://gateszhangc.github.io/game-of-thrones-map/og-image.jpg">
+    <meta property="og:site_name" content="Game of Thrones Map">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gateszhangc.github.io/game-of-thrones-map/">
+    <meta property="twitter:title" content="权力的游戏 - 维斯特洛大陆互动地图">
+    <meta property="twitter:description" content="探索权力的游戏中的维斯特洛大陆互动地图。点击查看临冬城、君临城、凯岩城等主要城市的详细信息。">
+    <meta property="twitter:image" content="https://gateszhangc.github.io/game-of-thrones-map/og-image.jpg">
+
+    <!-- 技术SEO -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#2a4d3a">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- 样式和字体 -->
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=MedievalSharp&display=swap" rel="stylesheet">
+
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "权力的游戏 - 维斯特洛大陆地图",
+        "description": "探索权力的游戏中的维斯特洛大陆互动地图。点击查看临冬城、君临城、凯岩城等主要城市的详细信息。",
+        "url": "https://gateszhangc.github.io/game-of-thrones-map/",
+        "applicationCategory": "EntertainmentApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "CNY"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "Game of Thrones Map"
+        },
+        "keywords": "权力的游戏,维斯特洛,地图,临冬城,君临城,史塔克,兰尼斯特",
+        "inLanguage": "zh-CN",
+        "datePublished": "2024-11-04",
+        "dateModified": "2024-11-04"
+    }
+    </script>
 </head>
-<body>
-    <header class="site-header">
-        <h1 class="site-title">权力的游戏</h1>
-        <p class="site-subtitle">维斯特洛大陆互动地图</p>
+<body itemscope itemtype="https://schema.org/WebApplication">
+    <!-- 跳转到主内容链接（提高可访问性） -->
+    <a href="#main-content" class="skip-link">跳转到主内容</a>
+
+    <header class="site-header" role="banner">
+        <div class="header-content">
+            <h1 class="site-title" itemprop="name">权力的游戏</h1>
+            <p class="site-subtitle" itemprop="description">维斯特洛大陆互动地图</p>
+        </div>
+        <nav class="site-nav" role="navigation" aria-label="主导航">
+            <ul>
+                <li><a href="#map-section" aria-label="查看地图">地图</a></li>
+                <li><a href="#cities-section" aria-label="查看城市">城市</a></li>
+                <li><a href="#about-section" aria-label="关于本项目">关于</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main class="main-content">
-        <div class="map-container">
+    <main id="main-content" class="main-content" role="main">
+        <section id="map-section" class="map-container" aria-labelledby="map-heading">
+            <h2 id="map-heading" class="visually-hidden">维斯特洛大陆地图</h2>
             <div class="map-wrapper">
-                <svg id="got-map" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
-                    <!-- 背景 -->
-                    <rect width="1200" height="800" fill="#2a4d3a"/>
+                <figure class="map-figure">
+                    <svg id="got-map" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"
+                         role="img" aria-label="维斯特洛大陆地图，显示主要城市和地区"
+                         aria-describedby="map-description">
 
-                    <!-- 海洋区域 -->
-                    <ellipse cx="100" cy="100" rx="80" ry="60" fill="#1e3a8a" opacity="0.7"/>
-                    <ellipse cx="1100" cy="150" rx="90" ry="70" fill="#1e3a8a" opacity="0.7"/>
-                    <ellipse cx="1050" cy="700" rx="85" ry="65" fill="#1e3a8a" opacity="0.7"/>
+                        <title>维斯特洛大陆互动地图</title>
+                        <desc id="map-description">
+                            权力的游戏世界中的维斯特洛大陆地图，包含北境、河间地、西境、风暴地、多恩等地区，
+                            以及临冬城、君临城、凯岩城、风息堡、阳戟城等重要城市。点击城市标记可查看详细信息。
+                        </desc>
 
-                    <!-- 维斯特洛大陆轮廓 -->
-                    <path d="M 300 200 Q 350 150, 450 180 T 550 220 Q 650 200, 750 240 T 850 280 Q 920 320, 900 400 T 880 500 Q 860 580, 800 620 T 700 650 Q 600 670, 500 640 T 350 580 Q 280 520, 300 400 T 320 280 Q 310 240, 300 200"
-                          fill="#4a7c59" stroke="#2d5016" stroke-width="3"/>
+                        <!-- 背景 -->
+                        <rect width="1200" height="800" fill="#2a4d3a" aria-hidden="true"/>
 
-                    <!-- 北境 -->
-                    <path d="M 480 220 Q 550 200, 620 240 T 680 320 Q 660 380, 600 400 T 480 380 Q 420 340, 480 220"
-                          fill="#6b8e5a" stroke="#4a6b3a" stroke-width="2"/>
+                        <!-- 海洋区域 -->
+                        <g aria-hidden="true">
+                            <ellipse cx="100" cy="100" rx="80" ry="60" fill="#1e3a8a" opacity="0.7"/>
+                            <ellipse cx="1100" cy="150" rx="90" ry="70" fill="#1e3a8a" opacity="0.7"/>
+                            <ellipse cx="1050" cy="700" rx="85" ry="65" fill="#1e3a8a" opacity="0.7"/>
+                        </g>
 
-                    <!-- 河间地 -->
-                    <path d="M 520 380 Q 580 400, 620 440 T 600 500 Q 550 520, 500 480 T 520 380"
-                          fill="#8fa67f" stroke="#6b8e5a" stroke-width="2"/>
+                        <!-- 维斯特洛大陆轮廓 -->
+                        <path d="M 300 200 Q 350 150, 450 180 T 550 220 Q 650 200, 750 240 T 850 280 Q 920 320, 900 400 T 880 500 Q 860 580, 800 620 T 700 650 Q 600 670, 500 640 T 350 580 Q 280 520, 300 400 T 320 280 Q 310 240, 300 200"
+                              fill="#4a7c59" stroke="#2d5016" stroke-width="3" aria-label="维斯特洛大陆"/>
 
-                    <!-- 西境 -->
-                    <path d="M 400 320 Q 450 340, 480 380 T 460 440 Q 410 460, 380 420 T 400 320"
-                          fill="#9bb89a" stroke="#7a9a7a" stroke-width="2"/>
+                        <!-- 北境 -->
+                        <path d="M 480 220 Q 550 200, 620 240 T 680 320 Q 660 380, 600 400 T 480 380 Q 420 340, 480 220"
+                              fill="#6b8e5a" stroke="#4a6b3a" stroke-width="2" aria-label="北境地区"/>
 
-                    <!-- 风息堡 -->
-                    <path d="M 680 440 Q 730 450, 760 480 T 740 540 Q 690 560, 660 520 T 680 440"
-                          fill="#a8c5a8" stroke="#8fa67f" stroke-width="2"/>
+                        <!-- 河间地 -->
+                        <path d="M 520 380 Q 580 400, 620 440 T 600 500 Q 550 520, 500 480 T 520 380"
+                              fill="#8fa67f" stroke="#6b8e5a" stroke-width="2" aria-label="河间地"/>
 
-                    <!-- 多恩 -->
-                    <path d="M 640 580 Q 690 600, 720 640 T 700 700 Q 650 720, 620 680 T 640 580"
-                          fill="#c5d6c5" stroke="#a8c5a8" stroke-width="2"/>
+                        <!-- 西境 -->
+                        <path d="M 400 320 Q 450 340, 480 380 T 460 440 Q 410 460, 380 420 T 400 320"
+                              fill="#9bb89a" stroke="#7a9a7a" stroke-width="2" aria-label="西境"/>
 
-                    <!-- 主要城市位置标记 -->
-                    <g class="city-marker" data-city="临冬城" data-info="史塔克家族的城堡，北境的首府">
-                        <circle cx="550" cy="280" r="8" fill="#dc2626" stroke="#fff" stroke-width="2"/>
-                        <text x="570" y="285" fill="#fff" font-size="12" font-family="MedievalSharp">临冬城</text>
-                    </g>
+                        <!-- 风息堡 -->
+                        <path d="M 680 440 Q 730 450, 760 480 T 740 540 Q 690 560, 660 520 T 680 440"
+                              fill="#a8c5a8" stroke="#8fa67f" stroke-width="2" aria-label="风暴地"/>
 
-                    <g class="city-marker" data-city="君临城" data-info="七大王国的首都，铁王座的所在地">
-                        <circle cx="620" cy="480" r="10" fill="#f59e0b" stroke="#fff" stroke-width="2"/>
-                        <text x="640" y="485" fill="#fff" font-size="12" font-family="MedievalSharp">君临城</text>
-                    </g>
+                        <!-- 多恩 -->
+                        <path d="M 640 580 Q 690 600, 720 640 T 700 700 Q 650 720, 620 680 T 640 580"
+                              fill="#c5d6c5" stroke="#a8c5a8" stroke-width="2" aria-label="多恩"/>
 
-                    <g class="city-marker" data-city="凯岩城" data-info="兰尼斯特家族的城堡，西境的首府">
-                        <circle cx="420" cy="380" r="8" fill="#eab308" stroke="#fff" stroke-width="2"/>
-                        <text x="440" y="385" fill="#fff" font-size="12" font-family="MedievalSharp">凯岩城</text>
-                    </g>
+                        <!-- 主要城市位置标记 -->
+                        <g class="city-marker" data-city="临冬城" data-info="史塔克家族的城堡，北境的首府"
+                           role="button" tabindex="0" aria-label="临冬城 - 史塔克家族的城堡，北境的首府">
+                            <circle cx="550" cy="280" r="8" fill="#dc2626" stroke="#fff" stroke-width="2"/>
+                            <text x="570" y="285" fill="#fff" font-size="12" font-family="MedievalSharp">临冬城</text>
+                        </g>
 
-                    <g class="city-marker" data-city="风息堡" data-info="拜拉席恩家族的城堡，风暴地首府">
-                        <circle cx="700" cy="500" r="8" fill="#3b82f6" stroke="#fff" stroke-width="2"/>
-                        <text x="720" y="505" fill="#fff" font-size="12" font-family="MedievalSharp">风息堡</text>
-                    </g>
+                        <g class="city-marker" data-city="君临城" data-info="七大王国的首都，铁王座的所在地"
+                           role="button" tabindex="0" aria-label="君临城 - 七大王国的首都，铁王座的所在地">
+                            <circle cx="620" cy="480" r="10" fill="#f59e0b" stroke="#fff" stroke-width="2"/>
+                            <text x="640" y="485" fill="#fff" font-size="12" font-family="MedievalSharp">君临城</text>
+                        </g>
 
-                    <g class="city-marker" data-city="阳戟城" data-info="马泰尔家族的城堡，多恩的首府">
-                        <circle cx="680" cy="650" r="8" fill="#ef4444" stroke="#fff" stroke-width="2"/>
-                        <text x="700" y="655" fill="#fff" font-size="12" font-family="MedievalSharp">阳戟城</text>
-                    </g>
+                        <g class="city-marker" data-city="凯岩城" data-info="兰尼斯特家族的城堡，西境的首府"
+                           role="button" tabindex="0" aria-label="凯岩城 - 兰尼斯特家族的城堡，西境的首府">
+                            <circle cx="420" cy="380" r="8" fill="#eab308" stroke="#fff" stroke-width="2"/>
+                            <text x="440" y="385" fill="#fff" font-size="12" font-family="MedievalSharp">凯岩城</text>
+                        </g>
 
-                    <g class="city-marker" data-city="长城" data-info="守护北境的巨大冰墙，守夜人的驻地">
-                        <rect x="480" y="120" width="140" height="15" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
-                        <text x="500" y="110" fill="#fff" font-size="12" font-family="MedievalSharp">长城</text>
-                    </g>
-                </svg>
+                        <g class="city-marker" data-city="风息堡" data-info="拜拉席恩家族的城堡，风暴地首府"
+                           role="button" tabindex="0" aria-label="风息堡 - 拜拉席恩家族的城堡，风暴地首府">
+                            <circle cx="700" cy="500" r="8" fill="#3b82f6" stroke="#fff" stroke-width="2"/>
+                            <text x="720" y="505" fill="#fff" font-size="12" font-family="MedievalSharp">风息堡</text>
+                        </g>
+
+                        <g class="city-marker" data-city="阳戟城" data-info="马泰尔家族的城堡，多恩的首府"
+                           role="button" tabindex="0" aria-label="阳戟城 - 马泰尔家族的城堡，多恩的首府">
+                            <circle cx="680" cy="650" r="8" fill="#ef4444" stroke="#fff" stroke-width="2"/>
+                            <text x="700" y="655" fill="#fff" font-size="12" font-family="MedievalSharp">阳戟城</text>
+                        </g>
+
+                        <g class="city-marker" data-city="长城" data-info="守护北境的巨大冰墙，守夜人的驻地"
+                           role="button" tabindex="0" aria-label="长城 - 守护北境的巨大冰墙，守夜人的驻地">
+                            <rect x="480" y="120" width="140" height="15" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+                            <text x="500" y="110" fill="#fff" font-size="12" font-family="MedievalSharp">长城</text>
+                        </g>
+                    </svg>
+                    <figcaption class="map-caption">
+                        <p>点击地图上的城市标记查看详细信息。使用鼠标滚轮或按钮进行缩放，拖拽地图移动视图。</p>
+                    </figcaption>
+                </figure>
 
                 <!-- 信息面板 -->
-                <div class="info-panel">
-                    <h3>地点信息</h3>
-                    <div id="location-info">
+                <aside id="cities-section" class="info-panel" role="complementary" aria-labelledby="info-heading">
+                    <h3 id="info-heading">地点信息</h3>
+                    <div id="location-info" role="region" aria-live="polite" aria-label="城市详细信息">
                         <p>点击地图上的标记查看详细信息</p>
                     </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="controls" aria-labelledby="controls-heading">
+            <h2 id="controls-heading" class="visually-hidden">地图控制</h2>
+            <div class="control-group">
+                <button id="zoom-in" aria-label="放大地图" title="放大地图 (快捷键: +)">放大</button>
+                <button id="zoom-out" aria-label="缩小地图" title="缩小地图 (快捷键: -)">缩小</button>
+                <button id="reset-view" aria-label="重置地图视图" title="重置视图 (快捷键: R)">重置视图</button>
+                <div class="filter-control">
+                    <label for="region-filter" id="region-filter-label">筛选地区:</label>
+                    <select id="region-filter" aria-labelledby="region-filter-label">
+                        <option value="all">所有地区</option>
+                        <option value="north">北境</option>
+                        <option value="riverlands">河间地</option>
+                        <option value="west">西境</option>
+                        <option value="storm">风暴地</option>
+                        <option value="dorne">多恩</option>
+                    </select>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="controls">
-            <button id="zoom-in">放大</button>
-            <button id="zoom-out">缩小</button>
-            <button id="reset-view">重置视图</button>
-            <select id="region-filter">
-                <option value="all">所有地区</option>
-                <option value="north">北境</option>
-                <option value="riverlands">河间地</option>
-                <option value="west">西境</option>
-                <option value="storm">风暴地</option>
-                <option value="dorne">多恩</option>
-            </select>
-        </div>
+        <section id="about-section" class="about-section" aria-labelledby="about-heading">
+            <h2 id="about-heading">关于这个地图</h2>
+            <div class="about-content">
+                <p>这是一个基于《冰与火之歌》小说系列和《权力的游戏》电视剧的维斯特洛大陆互动地图。
+                地图展示了七大王国的各个地区和重要城市，您可以点击城市标记了解更多关于每个地点的信息，
+                包括统治家族、历史文化、建立时间等详细内容。</p>
+                <div class="features-list">
+                    <h3>功能特色:</h3>
+                    <ul>
+                        <li>🗺️ 互动式维斯特洛大陆地图</li>
+                        <li>🏰 详细的城市和城堡信息</li>
+                        <li>👑 统治家族和家族箴言</li>
+                        <li>🔍 地区筛选功能</li>
+                        <li>⌨️ 键盘快捷键支持</li>
+                        <li>📱 移动设备友好</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="site-footer">
-        <p>&copy; 2024 权力的游戏地图 - 基于《冰与火之歌》小说系列</p>
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-content">
+            <p>&copy; 2024 权力的游戏地图 - 基于《冰与火之歌》小说系列</p>
+            <p class="disclaimer">
+                本项目为粉丝制作的非商业项目，所有内容版权归属于原作者George R.R. Martin及HBO。
+            </p>
+            <nav class="footer-nav" aria-label="页脚导航">
+                <a href="#about-section">关于</a>
+                <a href="https://github.com/gateszhangc/game-of-thrones-map" target="_blank" rel="noopener">GitHub</a>
+            </nav>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
