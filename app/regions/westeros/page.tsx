@@ -1,0 +1,74 @@
+import { Metadata } from 'next';
+import { readFile } from 'fs/promises';
+import path from 'path';
+
+export const metadata: Metadata = {
+  title: 'Westeros - Game of Thrones Map',
+  description: 'Explore the Seven Kingdoms of Westeros. From the frozen lands beyond The Wall to the deserts of Dorne, discover all locations in Westeros.',
+};
+
+async function getWesterosPageData() {
+  try {
+    const filePath = path.join(process.cwd(), 'data', 'westeros-body.html');
+    const westerosBodyContent = await readFile(filePath, 'utf8');
+    return { westerosBodyContent };
+  } catch (error) {
+    console.error('Error reading westeros page data:', error);
+    return { westerosBodyContent: '' };
+  }
+}
+
+export default async function WesterosPage() {
+  const { westerosBodyContent } = await getWesterosPageData();
+
+  return (
+    <div
+      className="page-wrapper"
+      dangerouslySetInnerHTML={{
+        __html: `
+          <header className="main-header">
+            <nav>
+              <div className="logo">
+                <a href="/">
+                  <span className="logo-text">Game of Thrones</span>
+                  <span className="logo-subtext">Map</span>
+                </a>
+              </div>
+              <ul className="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/">Locations</a></li>
+                <li><a href="/">Great Houses</a></li>
+                <li><a href="/">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+              </ul>
+            </nav>
+          </header>
+
+          <main>
+            ${westerosBodyContent}
+          </main>
+
+          <footer className="main-footer">
+            <div className="footer-content">
+              <div className="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                  <li><a href="/privacy">Privacy Policy</a></li>
+                  <li><a href="/terms">Terms of Use</a></li>
+                  <li><a href="/sitemap.xml">Sitemap</a></li>
+                </ul>
+              </div>
+              <div className="footer-section">
+                <h4>Contact</h4>
+                <p>Email: <a href="mailto:hello@thegameofthronesmap.com">hello@thegameofthronesmap.com</a></p>
+              </div>
+            </div>
+            <div className="footer-bottom">
+              <p>&copy; 2024 Game of Thrones Map. All rights reserved.</p>
+            </div>
+          </footer>
+        `
+      }}
+    />
+  );
+}

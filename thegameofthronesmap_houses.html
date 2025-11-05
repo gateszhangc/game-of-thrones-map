@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the detailed interactive map of Game of Thrones. Discover all locations from Westeros to Essos, including major houses, cities, and historical landmarks.">
+    <title>Game of Thrones Map - Interactive Atlas of Westeros and Essos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="canonical" href="https://thegameofthronesmap.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="main-header">
+            <nav>
+                <div class="logo">
+                    <a href="/">
+                        <span class="logo-text">Game of Thrones</span>
+                        <span class="logo-subtext">Map</span>
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/locations">Locations</a></li>
+                    <li><a href="/houses">Great Houses</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>Explore the World of Ice and Fire</h1>
+                    <p class="hero-subtitle">Journey through the Seven Kingdoms and beyond the Narrow Sea</p>
+                    <div class="hero-cta">
+                        <a href="#map" class="cta-button">Explore Map</a>
+                        <a href="/houses" class="cta-button secondary">View Houses</a>
+                    </div>
+                </div>
+                <div class="scroll-indicator">
+                    <span class="scroll-text">Scroll to Explore</span>
+                    <div class="scroll-arrow"></div>
+                </div>
+            </section>
+
+            <section id="map" class="interactive-map-section">
+                <div class="section-header">
+                    <h2>Interactive Map</h2>
+                    <div class="ornament"></div>
+                </div>
+                <div class="map-container">
+                    <div id="map" class="got-map"></div>
+                    <div class="map-controls">
+                        <button class="map-btn" data-region="westeros">Westeros</button>
+                        <button class="map-btn" data-region="essos">Essos</button>
+                        <button class="map-btn" data-region="north">The North</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features">
+                <div class="section-header">
+                    <h2>Discover the Realm</h2>
+                    <div class="ornament"></div>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon westeros-icon"></div>
+                        <h3>Westeros</h3>
+                        <p>From the frozen lands beyond The Wall to the deserts of Dorne, explore the Seven Kingdoms.</p>
+                        <a href="/regions/westeros" class="feature-link">Explore Westeros</a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon essos-icon"></div>
+                        <h3>Essos</h3>
+                        <p>Journey through the Free Cities, the Dothraki Sea, and the ancient ruins of Old Valyria.</p>
+                        <a href="/regions/essos" class="feature-link">Explore Essos</a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon houses-icon"></div>
+                        <h3>Great Houses</h3>
+                        <p>Learn about the noble houses, their sigils, words, and ancestral seats.</p>
+                        <a href="/houses" class="feature-link">View Houses</a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon battles-icon"></div>
+                        <h3>Historic Battles</h3>
+                        <p>Discover the locations of legendary battles that shaped the realm.</p>
+                        <a href="/battles" class="feature-link">View Battles</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="related-resources">
+                <div class="section-header">
+                    <h2>Recommended Resources</h2>
+                    <div class="ornament"></div>
+                </div>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <h3>Official HBO Map</h3>
+                        <p>The official interactive viewer's guide map from HBO.</p>
+                        <a href="https://viewers-guide.hbo.com/game-of-thrones" class="resource-link" target="_blank" rel="noopener">Visit Site</a>
+                    </div>
+                    <div class="resource-card">
+                        <h3>A Wiki of Ice and Fire</h3>
+                        <p>Detailed maps and locations from the comprehensive ASOIAF wiki.</p>
+                        <a href="https://awoiaf.westeros.org/index.php/Portal:Geography" class="resource-link" target="_blank" rel="noopener">Visit Site</a>
+                    </div>
+                    <div class="resource-card">
+                        <h3>Quarter Maester</h3>
+                        <p>Interactive map showing character journeys throughout the series.</p>
+                        <a href="https://quartermaester.info/" class="resource-link" target="_blank" rel="noopener">Visit Site</a>
+                    </div>
+                    <div class="resource-card">
+                        <h3>GOT Wiki Maps</h3>
+                        <p>Collection of maps from the Game of Thrones Wiki.</p>
+                        <a href="https://gameofthrones.fandom.com/wiki/Category:Maps" class="resource-link" target="_blank" rel="noopener">Visit Site</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                        <li><a href="/terms">Terms of Use</a></li>
+                        <li><a href="/sitemap.xml">Sitemap</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9df4f3fbf2dde9f5f8fafcf0f8f2fbe9f5eff2f3f8eef0fcedb3fef2f0">[email&#160;protected]</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-icon twitter"></a>
+                        <a href="#" class="social-icon facebook"></a>
+                        <a href="#" class="social-icon instagram"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Game of Thrones Map. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html> 
