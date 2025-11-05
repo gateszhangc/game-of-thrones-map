@@ -31,6 +31,12 @@ const structuredData = {
   ]
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -77,11 +83,7 @@ export const metadata: Metadata = {
     follow: true
   },
   category: "entertainment",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5
-  }
+
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

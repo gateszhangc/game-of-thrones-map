@@ -1,12 +1,18 @@
 import Link from "next/link";
 
-const NAV_LINKS = [
+interface NavLink {
+  label: string;
+  href: string;
+  isCurrent: boolean;
+}
+
+const NAV_LINKS: NavLink[] = [
   { label: "Home", href: "/", isCurrent: true },
-  { label: "Locations", href: "/locations" },
-  { label: "Great Houses", href: "/houses" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" }
-] as const;
+  { label: "Locations", href: "/locations", isCurrent: false },
+  { label: "Great Houses", href: "/houses", isCurrent: false },
+  { label: "About", href: "/about", isCurrent: false },
+  { label: "Contact", href: "/contact", isCurrent: false }
+];
 
 const MAP_CONTROLS = [
   { region: "westeros", label: "Westeros" },
