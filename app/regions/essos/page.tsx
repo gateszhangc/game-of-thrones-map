@@ -1,74 +1,88 @@
 import { Metadata } from 'next';
-import { readFile } from 'fs/promises';
-import path from 'path';
+import Link from 'next/link';
+import RegionHero from '../components/RegionHero';
+import RegionOverview from '../components/RegionOverview';
+import InteractiveMapSection from '../components/InteractiveMapSection';
+import RegionSection from '../components/RegionSection';
+import RelatedPages from '../components/RelatedPages';
+import { essosData } from './data';
 
 export const metadata: Metadata = {
-  title: 'Essos - Game of Thrones Map',
-  description: 'Explore the eastern continent of Essos. Journey through the Free Cities, the Dothraki Sea, and the ancient ruins of Old Valyria.',
+  title: 'Essos - Locations, Geography & Legends | Game of Thrones Map',
+  description: 'Explore detailed maps and locations of the eastern continent of Essos. From the Free Cities to the Dothraki Sea, discover the history and diverse cultures of key cities like Braavos, Meereen, and Qarth.',
+  openGraph: {
+    title: 'Essos - Locations, Geography & Legends | Game of Thrones Map',
+    description: 'Explore detailed maps and locations of the eastern continent of Essos. From the Free Cities to the Dothraki Sea, discover the history and diverse cultures of key cities like Braavos, Meereen, and Qarth.',
+    url: 'https://thegameofthronesmap.com/regions/essos',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://thegameofthronesmap.com/regions/essos',
+  },
 };
 
-async function getEssosPageData() {
-  try {
-    const filePath = path.join(process.cwd(), 'data', 'essos-body.html');
-    const essosBodyContent = await readFile(filePath, 'utf8');
-    return { essosBodyContent };
-  } catch (error) {
-    console.error('Error reading essos page data:', error);
-    return { essosBodyContent: '' };
-  }
-}
-
-export default async function EssosPage() {
-  const { essosBodyContent } = await getEssosPageData();
-
+export default function EssosPage() {
   return (
-    <div
-      className="page-wrapper"
-      dangerouslySetInnerHTML={{
-        __html: `
-          <header className="main-header">
-            <nav>
-              <div className="logo">
-                <a href="/">
-                  <span className="logo-text">Game of Thrones</span>
-                  <span className="logo-subtext">Map</span>
-                </a>
-              </div>
-              <ul className="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/">Locations</a></li>
-                <li><a href="/">Great Houses</a></li>
-                <li><a href="/">About</a></li>
-                <li><a href="/contact">Contact</a></li>
-              </ul>
-            </nav>
-          </header>
+    <div className="page-wrapper">
+      <header className="main-header">
+        <nav>
+          <div className="logo">
+            <Link href="/">
+              <span className="logo-text">Game of Thrones</span>
+              <span className="logo-subtext">Map</span>
+            </Link>
+          </div>
+          <ul className="nav-links">
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/#interactive-map">Locations</Link></li>
+            <li><Link href="/houses">Great Houses</Link></li>
+            <li><Link href="/battles">Battles</Link></li>
+            <li><Link href="/contact">Contact</Link></li>
+          </ul>
+        </nav>
+      </header>
 
-          <main>
-            ${essosBodyContent}
-          </main>
+      <main>
+        <RegionHero 
+          title={essosData.title}
+          subtitle={essosData.subtitle}
+          regionId={essosData.id}
+        />
 
-          <footer className="main-footer">
-            <div className="footer-content">
-              <div className="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                  <li><a href="/privacy">Privacy Policy</a></li>
-                  <li><a href="/terms">Terms of Use</a></li>
-                  <li><a href="/sitemap.xml">Sitemap</a></li>
-                </ul>
-              </div>
-              <div className="footer-section">
-                <h4>Contact</h4>
-                <p>Email: <a href="mailto:hello@thegameofthronesmap.com">hello@thegameofthronesmap.com</a></p>
-              </div>
-            </div>
-            <div className="footer-bottom">
-              <p>&copy; 2024 Game of Thrones Map. All rights reserved.</p>
-            </div>
-          </footer>
-        `
-      }}
-    />
+        <RegionOverview overview={essosData.overview} />
+
+        <InteractiveMapSection regionId={essosData.id} />
+
+        {essosData.sections.map((section) => (
+          <RegionSection
+            key={section.id}
+            section={section}
+            regionId={essosData.id}
+          />
+        ))}
+
+        <RelatedPages currentRegion={essosData.id} />
+      </main>
+
+      <footer className="main-footer">
+        <div className="footer-content">
+          <div className="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><Link href="/privacy">Privacy Policy</Link></li>
+              <li><Link href="/terms">Terms of Use</Link></li>
+              <li><Link href="/sitemap.xml">Sitemap</Link></li>
+            </ul>
+          </div>
+          <div className="footer-section">
+            <h4>Contact</h4>
+            <p>Email: <a href="mailto:hello@thegameofthronesmap.com">hello@thegameofthronesmap.com</a></p>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <p>&copy; 2024 Game of Thrones Map. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
   );
 }
