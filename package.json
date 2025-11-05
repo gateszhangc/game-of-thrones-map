@@ -13,7 +13,9 @@
     "update:seo": "node scripts/updateSeoAssets.js",
     "capture": "node scripts/captureScreenshots.js",
     "compare": "node scripts/compareScreenshots.js",
-    "diff:analyze": "node scripts/analyzeRawDiff.js"
+    "diff:analyze": "node scripts/analyzeRawDiff.js",
+    "test:pages": "node scripts/testAllPages.js",
+    "test:icons": "node scripts/checkIcons.js"
   },
   "keywords": [],
   "author": "",
