@@ -1693,3 +1693,226 @@ section {
     font-size: 1.3rem;
   }
 }
+
+
+/* ============================================
+   Battles Page Styles
+   ============================================ */
+
+/* Battles Hero Section */
+.battles-hero {
+  background: linear-gradient(135deg, 
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(42, 36, 22, 0.7) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.battles-hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.battles-hero-title {
+  font-family: 'MedievalSharp', 'Cinzel', serif;
+  font-size: 3.5rem;
+  color: var(--primary-color);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.battles-hero-subtitle {
+  font-family: 'Lora', serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--light-text);
+  margin-bottom: 2rem;
+}
+
+/* Battles Grid */
+.battles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  background: linear-gradient(rgba(26, 26, 26, 0.95), rgba(26, 26, 26, 0.9));
+}
+
+/* Battle Card */
+.battle-card {
+  background: var(--parchment);
+  border: 3px solid var(--secondary-color);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+}
+
+.battle-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(0deg, 
+    transparent, 
+    transparent 2px, 
+    rgba(139, 115, 85, 0.02) 2px, 
+    rgba(139, 115, 85, 0.02) 4px
+  );
+  border-radius: 6px;
+  pointer-events: none;
+}
+
+.battle-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.battle-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.battle-name {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.battle-meta {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  position: relative;
+  z-index: 1;
+}
+
+.battle-year,
+.battle-location {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: 'Lora', serif;
+}
+
+.battle-participants,
+.battle-outcome {
+  font-family: 'Lora', serif;
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+  text-align: left;
+  color: var(--text-color);
+  position: relative;
+  z-index: 1;
+}
+
+.battle-description {
+  font-family: 'Lora', serif;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  text-align: left;
+  position: relative;
+  z-index: 1;
+}
+
+/* Battles CTA Section */
+.battles-cta {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2416 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+/* Responsive Design for Battles Page */
+@media (max-width: 1024px) {
+  .battles-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .battles-hero-title {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .battles-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+  }
+
+  .battles-hero {
+    padding: 3rem 1.5rem;
+  }
+
+  .battles-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .battles-hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .battle-card {
+    padding: 1.5rem;
+  }
+
+  .battle-icon {
+    font-size: 3rem;
+  }
+
+  .battle-name {
+    font-size: 1.4rem;
+  }
+
+  .battle-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .battles-hero-title {
+    font-size: 1.8rem;
+  }
+
+  .battle-icon {
+    font-size: 2.5rem;
+  }
+
+  .battle-name {
+    font-size: 1.2rem;
+  }
+}
