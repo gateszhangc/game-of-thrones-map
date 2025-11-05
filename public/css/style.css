@@ -448,19 +448,27 @@ section {
 
 /* Interactive Map Section */
 .interactive-map-section {
-    padding: 6rem 2rem;
+    padding: 0;
     background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.95));
 }
 
+.interactive-map-section .section-header {
+    display: none;
+}
+
 .map-container {
-    max-width: 1400px;
+    max-width: 1600px;
     margin: 0 auto;
     background: var(--parchment);
     border: 4px solid var(--secondary-color);
     border-radius: 8px;
-    padding: 2rem;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(139, 115, 85, 0.1);
+    padding: 0;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     position: relative;
+    overflow: hidden;
+    line-height: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .map-container::before,
@@ -932,4 +940,168 @@ section {
     .logo-subtext {
         font-size: 0.8rem;
     }
+}
+
+/* Interactive Map iframe Styles */
+.got-map-iframe {
+    width: 100%;
+    height: 800px;
+    border: none;
+    border-radius: 4px;
+    background: var(--aged-paper);
+    display: block;
+    min-height: 800px;
+}
+
+.map-attribution {
+    margin: 0;
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    padding: 1.5rem;
+    background: rgba(201, 169, 97, 0.05);
+    border-top: 2px solid rgba(139, 115, 85, 0.2);
+}
+
+.map-attribution p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.map-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Cinzel', serif;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.map-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.map-link:hover {
+    color: var(--accent-color);
+}
+
+.map-link:hover::after {
+    width: 100%;
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+    .got-map-iframe {
+        height: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+    .got-map-iframe {
+        height: 600px;
+    }
+    
+    .map-attribution {
+        font-size: 0.85rem;
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .got-map-iframe {
+        height: 500px;
+    }
+}
+
+/* Interactive Map iframe Styles - Updated */
+.got-map-iframe {
+  width: 100%;
+  height: 800px;
+  border: none;
+  border-radius: 4px 4px 0 0;
+  background: var(--aged-paper);
+  display: block;
+  min-height: 800px;
+  margin: 0;
+  padding: 0;
+  vertical-align: bottom;
+}
+
+.map-attribution {
+  display: none;
+}
+
+.map-attribution p {
+  background: rgba(244, 232, 208, 0.9);
+  padding: 0.8rem 1rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.map-attribution a {
+  pointer-events: auto;
+}
+
+.map-attribution p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.map-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Cinzel', serif;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.map-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.map-link:hover {
+  color: var(--accent-color);
+}
+
+.map-link:hover::after {
+  width: 100%;
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+  .got-map-iframe {
+    height: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .got-map-iframe {
+    height: 600px;
+  }
+
+  .map-attribution {
+    font-size: 0.85rem;
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .got-map-iframe {
+    height: 500px;
+  }
 }

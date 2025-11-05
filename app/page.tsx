@@ -146,13 +146,27 @@ export default function Home() {
             </div>
 
             <div className="map-container">
-              <div id="got-map" className="got-map" role="img" aria-label="Interactive map of Westeros and Essos" />
-              <div className="map-controls" role="group" aria-label="Map region filters">
-                {MAP_CONTROLS.map((control) => (
-                  <button key={control.region} className="map-btn" type="button" data-region={control.region}>
-                    {control.label}
-                  </button>
-                ))}
+              <iframe 
+                src="https://quartermaester.info/"
+                className="got-map-iframe"
+                title="Game of Thrones Interactive Map - Character Journeys and Locations"
+                loading="lazy"
+                allow="fullscreen"
+              />
+              
+              <div className="map-attribution">
+                <p>
+                  Interactive map powered by{' '}
+                  <a 
+                    href="https://quartermaester.info/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="map-link"
+                  >
+                    Quarter Maester
+                  </a>
+                  {' '}• Explore character journeys, locations, and timelines
+                </p>
               </div>
             </div>
           </section>
