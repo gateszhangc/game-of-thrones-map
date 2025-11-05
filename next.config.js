@@ -8,6 +8,17 @@ const nextConfig = {
   },
   experimental: {
     optimizePackageImports: ["node-html-parser"]
+  },
+  // Disable Tailwind CSS warnings
+  webpack: (config, { dev }) => {
+    if (!dev) {
+      config.optimization.minimizer.forEach((minimizer) => {
+        if (minimizer.constructor.name === 'TerserPlugin') {
+          minimizer.options.terserOptions.compress.warnings = false;
+        }
+      });
+    }
+    return config;
   }
 };
 
