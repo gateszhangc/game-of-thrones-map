@@ -49,6 +49,14 @@ export default function Header({ currentPage }: HeaderProps) {
                     aria-current={isActive ? "page" : undefined}
                     onClick={(e) => {
                       e.preventDefault();
+                      
+                      // 如果不在首页，先导航到首页
+                      if (pathname !== "/") {
+                        window.location.href = "/#interactive-map";
+                        return;
+                      }
+                      
+                      // 在首页时直接滚动到iframe
                       const element = document.getElementById('interactive-map');
                       if (element) {
                         element.scrollIntoView({ behavior: 'smooth' });
