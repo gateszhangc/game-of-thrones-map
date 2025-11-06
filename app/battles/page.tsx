@@ -1,16 +1,36 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Script from 'next/script';
 import BattleCard from './BattleCard';
 import { battles } from './data';
+import { generateSEOMetadata, getCanonicalUrl } from '../../lib/seo/metadata';
+import { generateWebPageSchema } from '../../lib/seo/structured-data';
 
-export const metadata: Metadata = {
-  title: 'Historic Battles - Game of Thrones Map',
-  description: 'Discover the locations of legendary battles that shaped the realm. From the War of the Five Kings to the Targaryen Conquest, explore the historic conflicts of Westeros and Essos.',
-};
+export const metadata: Metadata = generateSEOMetadata({
+  title: 'Game of Thrones Battles Map - Historic Conflicts & Battle Locations',
+  description: 'Explore historic battles from Game of Thrones on an interactive map. Discover legendary conflicts like the Battle of the Bastards, Blackwater, and the War of the Five Kings with their locations across Westeros and Essos.',
+  keywords: [
+    'game of thrones battles',
+    'game of thrones battle map',
+    'historic battles westeros',
+    'game of thrones war map'
+  ],
+  canonicalUrl: getCanonicalUrl('/battles')
+});
 
 export default function BattlesPage() {
+  const pageSchema = generateWebPageSchema({
+    url: getCanonicalUrl('/battles'),
+    name: 'Historic Battles - Game of Thrones Map',
+    description: 'Explore historic battles from Game of Thrones and their locations on the map.'
+  });
+
   return (
-    <div className="page-wrapper">
+    <>
+      <Script id="battles-page-schema" type="application/ld+json" strategy="beforeInteractive">
+        {JSON.stringify(pageSchema)}
+      </Script>
+      <div className="page-wrapper">
       <header className="main-header">
         <nav>
           <div className="logo">
@@ -58,5 +78,6 @@ export default function BattlesPage() {
         </section>
       </main>
     </div>
+    </>
   );
 }

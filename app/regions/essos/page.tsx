@@ -6,23 +6,36 @@ import RegionSection from '../components/RegionSection';
 import RelatedPages from '../components/RelatedPages';
 import { essosData } from './data';
 
-export const metadata: Metadata = {
-  title: 'Essos - Locations, Geography & Legends | Game of Thrones Map',
-  description: 'Explore detailed maps and locations of the eastern continent of Essos. From the Free Cities to the Dothraki Sea, discover the history and diverse cultures of key cities like Braavos, Meereen, and Qarth.',
-  openGraph: {
-    title: 'Essos - Locations, Geography & Legends | Game of Thrones Map',
-    description: 'Explore detailed maps and locations of the eastern continent of Essos. From the Free Cities to the Dothraki Sea, discover the history and diverse cultures of key cities like Braavos, Meereen, and Qarth.',
-    url: 'https://thegameofthronesmap.com/regions/essos',
-    type: 'website',
-  },
-  alternates: {
-    canonical: 'https://thegameofthronesmap.com/regions/essos',
-  },
-};
+import { generateSEOMetadata, getCanonicalUrl } from '../../../lib/seo/metadata';
+import { generateWebPageSchema } from '../../../lib/seo/structured-data';
+import Script from 'next/script';
+
+export const metadata: Metadata = generateSEOMetadata({
+  title: 'Game of Thrones Essos Map - Free Cities & Eastern Continent Locations',
+  description: 'Explore the complete Essos map from Game of Thrones. Discover the Free Cities, Dothraki Sea, Slaver\'s Bay, and locations like Braavos, Meereen, Qarth, and Volantis. Interactive map of Essos geography.',
+  keywords: [
+    'game of thrones essos map',
+    'map of game of thrones essos',
+    'essos map',
+    'free cities map',
+    'game of thrones map essos'
+  ],
+  canonicalUrl: getCanonicalUrl('/regions/essos')
+});
 
 export default function EssosPage() {
+  const pageSchema = generateWebPageSchema({
+    url: getCanonicalUrl('/regions/essos'),
+    name: 'Essos Map - Game of Thrones Eastern Continent',
+    description: 'Explore the complete Essos map from Game of Thrones featuring the Free Cities and all major locations.'
+  });
+
   return (
-    <div className="page-wrapper">
+    <>
+      <Script id="essos-page-schema" type="application/ld+json" strategy="beforeInteractive">
+        {JSON.stringify(pageSchema)}
+      </Script>
+      <div className="page-wrapper">
       <header className="main-header">
         <nav>
           <div className="logo">
@@ -61,5 +74,6 @@ export default function EssosPage() {
         <RelatedPages currentRegion={essosData.id} />
       </main>
     </div>
+    </>
   );
 }

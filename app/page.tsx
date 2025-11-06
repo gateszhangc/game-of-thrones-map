@@ -1,4 +1,24 @@
 import Link from "next/link";
+import { Metadata } from "next";
+import Script from "next/script";
+import { generateSEOMetadata, getCanonicalUrl } from "../lib/seo/metadata";
+import { generateWebPageSchema } from "../lib/seo/structured-data";
+import { SITE_URL } from "../lib/seo/constants";
+
+export const metadata: Metadata = generateSEOMetadata({
+  title: "Game of Thrones Map - Interactive World Map of Westeros & Essos",
+  description: "Explore the complete Game of Thrones map featuring the Seven Kingdoms, Westeros, Essos, and all major locations. Interactive map with houses, battles, and character journeys.",
+  keywords: [
+    "game of thrones map",
+    "game of thrones world map",
+    "game of thrones interactive map",
+    "game of thrones 7 kingdoms map",
+    "westeros map",
+    "essos map",
+    "seven kingdoms map"
+  ],
+  canonicalUrl: getCanonicalUrl("/")
+});
 
 interface NavLink {
   label: string;
@@ -90,8 +110,17 @@ const CONTACT_EMAIL = "hello@thegameofthronesmap.com";
 const CURRENT_YEAR = new Date().getFullYear();
 
 export default function Home() {
+  const pageSchema = generateWebPageSchema({
+    url: SITE_URL,
+    name: "Game of Thrones Map - Interactive World Map",
+    description: "Explore the complete Game of Thrones map featuring the Seven Kingdoms, Westeros, Essos, and all major locations."
+  });
+
   return (
     <>
+      <Script id="home-page-schema" type="application/ld+json" strategy="beforeInteractive">
+        {JSON.stringify(pageSchema)}
+      </Script>
       <div className="page-wrapper">
         <header className="main-header" role="banner">
           <nav aria-label="Primary">
@@ -117,8 +146,8 @@ export default function Home() {
         <main id="main-content">
           <section className="hero" aria-labelledby="hero-title">
             <div className="hero-content">
-              <h1 id="hero-title">Explore the World of Ice and Fire</h1>
-              <p className="hero-subtitle">Journey through the Seven Kingdoms and beyond the Narrow Sea</p>
+              <h1 id="hero-title">Game of Thrones Map: Explore the World of Ice and Fire</h1>
+              <p className="hero-subtitle">Discover the complete Game of Thrones world map featuring the Seven Kingdoms, Westeros, Essos, and the interactive map of all major locations and houses.</p>
               <div className="hero-cta">
                 <a href="#interactive-map" className="cta-button">
                   Explore Map

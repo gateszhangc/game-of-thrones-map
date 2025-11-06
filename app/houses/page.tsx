@@ -1,16 +1,37 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Script from 'next/script';
 import HouseCard from './HouseCard';
 import { houses } from './data';
+import { generateSEOMetadata, getCanonicalUrl } from '../../lib/seo/metadata';
+import { generateWebPageSchema } from '../../lib/seo/structured-data';
 
-export const metadata: Metadata = {
-  title: 'Great Houses - Game of Thrones Map',
-  description: 'Learn about the noble houses of Westeros and Essos. Discover their sigils, words, ancestral seats, and the great families that shape the realm.',
-};
+export const metadata: Metadata = generateSEOMetadata({
+  title: 'Game of Thrones Houses Map - Great Houses of Westeros & Their Locations',
+  description: 'Explore the Great Houses of Westeros on the Game of Thrones map. Discover noble families like Stark, Lannister, Targaryen, and Baratheon with their sigils, words, and ancestral seats mapped across the Seven Kingdoms.',
+  keywords: [
+    'game of thrones houses map',
+    'game of thrones map with houses',
+    'great houses westeros',
+    'game of thrones map and houses',
+    'map of houses in game of thrones'
+  ],
+  canonicalUrl: getCanonicalUrl('/houses')
+});
 
 export default function HousesPage() {
+  const pageSchema = generateWebPageSchema({
+    url: getCanonicalUrl('/houses'),
+    name: 'Great Houses of Westeros - Game of Thrones Map',
+    description: 'Explore the Great Houses of Westeros and their locations on the Game of Thrones map.'
+  });
+
   return (
-    <div className="page-wrapper">
+    <>
+      <Script id="houses-page-schema" type="application/ld+json" strategy="beforeInteractive">
+        {JSON.stringify(pageSchema)}
+      </Script>
+      <div className="page-wrapper">
       <header className="main-header">
         <nav>
           <div className="logo">
@@ -57,5 +78,6 @@ export default function HousesPage() {
         </section>
       </main>
     </div>
+    </>
   );
 }

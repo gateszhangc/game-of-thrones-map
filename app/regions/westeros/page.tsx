@@ -6,23 +6,36 @@ import RegionSection from '../components/RegionSection';
 import RelatedPages from '../components/RelatedPages';
 import { westerosData } from './data';
 
-export const metadata: Metadata = {
-  title: 'Westeros - Locations, Geography & Legends | Game of Thrones Map',
-  description: 'Explore detailed maps and locations of the Seven Kingdoms of Westeros. From the frozen lands beyond The Wall to the deserts of Dorne, discover the history and culture of key locations like Winterfell, King\'s Landing, and Highgarden.',
-  openGraph: {
-    title: 'Westeros - Locations, Geography & Legends | Game of Thrones Map',
-    description: 'Explore detailed maps and locations of the Seven Kingdoms of Westeros. From the frozen lands beyond The Wall to the deserts of Dorne, discover the history and culture of key locations like Winterfell, King\'s Landing, and Highgarden.',
-    url: 'https://thegameofthronesmap.com/regions/westeros',
-    type: 'website',
-  },
-  alternates: {
-    canonical: 'https://thegameofthronesmap.com/regions/westeros',
-  },
-};
+import { generateSEOMetadata, getCanonicalUrl } from '../../../lib/seo/metadata';
+import { generateWebPageSchema } from '../../../lib/seo/structured-data';
+import Script from 'next/script';
+
+export const metadata: Metadata = generateSEOMetadata({
+  title: 'Game of Thrones Westeros Map - Seven Kingdoms Locations & Geography',
+  description: 'Explore the complete Westeros map from Game of Thrones. Discover the Seven Kingdoms, from the frozen North and The Wall to King\'s Landing and Dorne. Interactive map of Westeros locations, houses, and landmarks.',
+  keywords: [
+    'game of thrones westeros map',
+    'map of game of thrones westeros',
+    'westeros map',
+    'seven kingdoms map',
+    'game of thrones 7 kingdoms map'
+  ],
+  canonicalUrl: getCanonicalUrl('/regions/westeros')
+});
 
 export default function WesterosPage() {
+  const pageSchema = generateWebPageSchema({
+    url: getCanonicalUrl('/regions/westeros'),
+    name: 'Westeros Map - Game of Thrones Seven Kingdoms',
+    description: 'Explore the complete Westeros map from Game of Thrones featuring the Seven Kingdoms and all major locations.'
+  });
+
   return (
-    <div className="page-wrapper">
+    <>
+      <Script id="westeros-page-schema" type="application/ld+json" strategy="beforeInteractive">
+        {JSON.stringify(pageSchema)}
+      </Script>
+      <div className="page-wrapper">
       <header className="main-header">
         <nav>
           <div className="logo">
@@ -61,5 +74,6 @@ export default function WesterosPage() {
         <RelatedPages currentRegion={westerosData.id} />
       </main>
     </div>
+    </>
   );
 }
