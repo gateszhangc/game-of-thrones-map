@@ -142,28 +142,15 @@ export default function Home() {
 
             <div className="map-container">
               <iframe 
-                src="about:blank"
-                data-src="https://quartermaester.info/"
+                // src="about:blank"
+                src="https://quartermaester.info/"
                 className="got-map-iframe"
                 title="Game of Thrones Interactive Map - Character Journeys and Locations"
                 loading="lazy"
                 allow="fullscreen"
+                // style="width:100%; height:100%; border:0;"
               />
-              
-              <div className="map-attribution">
-                <p>
-                  Interactive map powered by{' '}
-                  <a 
-                    href="https://quartermaester.info/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="map-link"
-                  >
-                    Quarter Maester
-                  </a>
-                  {' '}• Explore character journeys, locations, and timelines
-                </p>
-              </div>
+
             </div>
           </section>
 
