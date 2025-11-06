@@ -34,7 +34,10 @@ body {
     background: var(--dark-bg);
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: 'Cinzel', serif;
     font-weight: 700;
     color: var(--text-color);
@@ -45,21 +48,27 @@ h1, h2, h3, h4 {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(135deg, 
-        #2a2416 0%, 
-        #1a1a1a 25%, 
-        #2a2416 50%, 
-        #1a1a1a 75%, 
-        #2a2416 100%
-    );
+    background: linear-gradient(135deg,
+            #2a2416 0%,
+            #1a1a1a 25%,
+            #2a2416 50%,
+            #1a1a1a 75%,
+            #2a2416 100%);
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
     position: relative;
 }
 
 @keyframes gradientShift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 /* 纸张颗粒效果 - 纯CSS */
@@ -70,28 +79,26 @@ h1, h2, h3, h4 {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
-        repeating-linear-gradient(0deg, 
-            transparent, 
-            transparent 2px, 
-            rgba(139, 115, 85, 0.02) 2px, 
-            rgba(139, 115, 85, 0.02) 4px
-        ),
-        repeating-linear-gradient(90deg, 
-            transparent, 
-            transparent 2px, 
-            rgba(139, 115, 85, 0.02) 2px, 
-            rgba(139, 115, 85, 0.02) 4px
-        );
+    background-image:
+        repeating-linear-gradient(0deg,
+            transparent,
+            transparent 2px,
+            rgba(139, 115, 85, 0.02) 2px,
+            rgba(139, 115, 85, 0.02) 4px),
+        repeating-linear-gradient(90deg,
+            transparent,
+            transparent 2px,
+            rgba(139, 115, 85, 0.02) 2px,
+            rgba(139, 115, 85, 0.02) 4px);
     pointer-events: none;
     z-index: 1;
 }
 
 /* Header - Medieval Banner */
 .main-header {
-    background: linear-gradient(to bottom, 
-        rgba(26, 26, 26, 0.95) 0%, 
-        rgba(26, 26, 26, 0.9) 100%);
+    background: linear-gradient(to bottom,
+            rgba(26, 26, 26, 0.95) 0%,
+            rgba(26, 26, 26, 0.9) 100%);
     border-bottom: 3px solid var(--secondary-color);
     box-shadow: 0 2px 10px var(--shadow-dark);
     position: relative;
@@ -211,11 +218,10 @@ nav {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(135deg, 
-        rgba(0, 0, 0, 0.8) 0%,
-        rgba(42, 36, 22, 0.7) 50%,
-        rgba(0, 0, 0, 0.8) 100%
-    );
+    background: linear-gradient(135deg,
+            rgba(0, 0, 0, 0.8) 0%,
+            rgba(42, 36, 22, 0.7) 50%,
+            rgba(0, 0, 0, 0.8) 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -236,8 +242,15 @@ nav {
 }
 
 @keyframes vignettePulse {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 0.8; }
+
+    0%,
+    100% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
 }
 
 .hero::after {
@@ -247,15 +260,20 @@ nav {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
+    background:
         radial-gradient(circle at 20% 30%, rgba(201, 169, 97, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 70%, rgba(201, 169, 97, 0.1) 0%, transparent 50%);
     animation: particleFloat 20s linear infinite;
 }
 
 @keyframes particleFloat {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-20px); }
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-20px);
+    }
 }
 
 .hero-content {
@@ -279,9 +297,12 @@ nav {
 }
 
 @keyframes titleGlow {
-    0%, 100% {
+
+    0%,
+    100% {
         text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8), 0 0 20px rgba(201, 169, 97, 0.5);
     }
+
     50% {
         text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8), 0 0 30px rgba(201, 169, 97, 0.8), 0 0 40px rgba(201, 169, 97, 0.4);
     }
@@ -365,8 +386,15 @@ nav {
 }
 
 @keyframes scrollBounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
 }
 
 .scroll-text {
@@ -875,13 +903,14 @@ section {
     .hero h1 {
         font-size: 3.5rem;
     }
-    
+
     .section-header h2 {
         font-size: 2.5rem;
     }
 }
 
 @media (max-width: 1200px) {
+
     .feature-grid,
     .resources-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -893,32 +922,32 @@ section {
     .hero h1 {
         font-size: 2.5rem;
     }
-    
+
     .hero-subtitle {
         font-size: 1.2rem;
     }
-    
+
     .nav-links {
         display: none;
     }
-    
+
     .feature-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .resources-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .cta-button {
         padding: 0.8rem 1.5rem;
         font-size: 1rem;
     }
-    
+
     .section-header h2 {
         font-size: 2rem;
     }
-    
+
     .footer-content {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -929,11 +958,11 @@ section {
     .hero h1 {
         font-size: 2rem;
     }
-    
+
     .logo-text {
         font-size: 1.4rem;
     }
-    
+
     .logo-subtext {
         font-size: 0.8rem;
     }
@@ -1004,7 +1033,7 @@ section {
     .got-map-iframe {
         height: 600px;
     }
-    
+
     .map-attribution {
         font-size: 0.85rem;
         padding: 0.8rem;
@@ -1019,88 +1048,88 @@ section {
 
 /* Interactive Map iframe Styles - Updated */
 .got-map-iframe {
-  width: 100%;
-  height: 800px;
-  border: none;
-  border-radius: 4px 4px 0 0;
-  background: var(--aged-paper);
-  display: block;
-  min-height: 800px;
-  margin: 0;
-  padding: 0;
-  vertical-align: bottom;
+    width: 100%;
+    height: 800px;
+    border: none;
+    border-radius: 4px 4px 0 0;
+    background: var(--aged-paper);
+    display: block;
+    min-height: 800px;
+    margin: 0;
+    padding: 0;
+    vertical-align: bottom;
 }
 
 .map-attribution {
-  display: none;
+    display: none;
 }
 
 .map-attribution p {
-  background: rgba(244, 232, 208, 0.9);
-  padding: 0.8rem 1rem;
-  margin: 0;
-  line-height: 1.6;
+    background: rgba(244, 232, 208, 0.9);
+    padding: 0.8rem 1rem;
+    margin: 0;
+    line-height: 1.6;
 }
 
 .map-attribution a {
-  pointer-events: auto;
+    pointer-events: auto;
 }
 
 .map-attribution p {
-  margin: 0;
-  line-height: 1.6;
+    margin: 0;
+    line-height: 1.6;
 }
 
 .map-link {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: 600;
-  font-family: 'Cinzel', serif;
-  transition: all 0.3s ease;
-  position: relative;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Cinzel', serif;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 .map-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--primary-color);
-  transition: width 0.3s ease;
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
 }
 
 .map-link:hover {
-  color: var(--accent-color);
+    color: var(--accent-color);
 }
 
 .map-link:hover::after {
-  width: 100%;
+    width: 100%;
 }
 
 /* 响应式设计 */
 @media (max-width: 1024px) {
-  .got-map-iframe {
-    height: 700px;
-  }
+    .got-map-iframe {
+        height: 700px;
+    }
 }
 
 @media (max-width: 768px) {
-  .got-map-iframe {
-    height: 600px;
-  }
+    .got-map-iframe {
+        height: 600px;
+    }
 
-  .map-attribution {
-    font-size: 0.85rem;
-    padding: 0.8rem;
-  }
+    .map-attribution {
+        font-size: 0.85rem;
+        padding: 0.8rem;
+    }
 }
 
 @media (max-width: 480px) {
-  .got-map-iframe {
-    height: 500px;
-  }
+    .got-map-iframe {
+        height: 500px;
+    }
 }
 
 /* ============================================
@@ -1109,361 +1138,367 @@ section {
 
 /* Contact Page Container */
 .contact-page {
-  padding-top: 0;
-  min-height: 100vh;
+    padding-top: 0;
+    min-height: 100vh;
 }
 
 /* Contact Hero Section */
 .contact-hero {
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, 
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(42, 36, 22, 0.7) 50%,
-    rgba(0, 0, 0, 0.8) 100%
-  );
-  text-align: center;
-  position: relative;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg,
+            rgba(0, 0, 0, 0.8) 0%,
+            rgba(42, 36, 22, 0.7) 50%,
+            rgba(0, 0, 0, 0.8) 100%);
+    text-align: center;
+    position: relative;
 }
 
 .contact-hero-content {
-  max-width: 800px;
-  margin: 0 auto;
-  color: var(--light-text);
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--light-text);
 }
 
 .raven-icon {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  animation: ravenFloat 3s ease-in-out infinite;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: ravenFloat 3s ease-in-out infinite;
 }
 
 @keyframes ravenFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .contact-hero h1 {
-  font-family: 'MedievalSharp', 'Cinzel', serif;
-  font-size: 3.5rem;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-  letter-spacing: 2px;
+    font-family: 'MedievalSharp', 'Cinzel', serif;
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    letter-spacing: 2px;
 }
 
 .contact-hero-subtitle {
-  font-family: 'Cinzel', serif;
-  font-size: 1.5rem;
-  color: var(--primary-color);
-  margin-bottom: 1.5rem;
-  opacity: 0.9;
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
 }
 
 .contact-hero-description {
-  font-family: 'Lora', serif;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: var(--light-text);
-  max-width: 700px;
-  margin: 0 auto;
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--light-text);
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 /* Contact Section */
 .contact-section {
-  padding: 4rem 2rem;
-  background: linear-gradient(rgba(26, 26, 26, 0.95), rgba(26, 26, 26, 0.9));
+    padding: 4rem 2rem;
+    background: linear-gradient(rgba(26, 26, 26, 0.95), rgba(26, 26, 26, 0.9));
 }
 
 .contact-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
 }
 
 /* Contact Form */
 .contact-form-wrapper {
-  background: var(--parchment);
-  border: 4px solid var(--secondary-color);
-  border-radius: 12px;
-  padding: 3rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-  position: relative;
+    background: var(--parchment);
+    border: 4px solid var(--secondary-color);
+    border-radius: 12px;
+    padding: 3rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
 }
 
 .contact-form-wrapper::before,
 .contact-form-wrapper::after {
-  content: '';
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border: 3px solid var(--primary-color);
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--primary-color);
 }
 
 .contact-form-wrapper::before {
-  top: -3px;
-  left: -3px;
-  border-right: none;
-  border-bottom: none;
+    top: -3px;
+    left: -3px;
+    border-right: none;
+    border-bottom: none;
 }
 
 .contact-form-wrapper::after {
-  bottom: -3px;
-  right: -3px;
-  border-left: none;
-  border-top: none;
+    bottom: -3px;
+    right: -3px;
+    border-left: none;
+    border-top: none;
 }
 
 .form-seal {
-  position: absolute;
-  top: -30px;
-  right: 40px;
-  font-size: 3rem;
-  background: var(--parchment);
-  padding: 0 1rem;
-  color: var(--primary-color);
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    position: absolute;
+    top: -30px;
+    right: 40px;
+    font-size: 3rem;
+    background: var(--parchment);
+    padding: 0 1rem;
+    color: var(--primary-color);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
 
 .contact-form {
-  position: relative;
+    position: relative;
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .form-group label {
-  display: block;
-  font-family: 'Cinzel', serif;
-  font-size: 1rem;
-  color: var(--text-color);
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .form-group input,
 .form-group textarea {
-  width: 100%;
-  padding: 0.8rem 1rem;
-  font-family: 'Lora', serif;
-  font-size: 1rem;
-  color: var(--text-color);
-  background: rgba(255, 255, 255, 0.7);
-  border: 2px solid var(--secondary-color);
-  border-radius: 6px;
-  transition: all 0.3s ease;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: var(--text-color);
+    background: rgba(255, 255, 255, 0.7);
+    border: 2px solid var(--secondary-color);
+    border-radius: 6px;
+    transition: all 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-  outline: none;
-  border-color: var(--primary-color);
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.2);
+    outline: none;
+    border-color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.2);
 }
 
 .form-group textarea {
-  resize: vertical;
-  min-height: 150px;
+    resize: vertical;
+    min-height: 150px;
 }
 
 .submit-btn {
-  width: 100%;
-  padding: 1rem 2rem;
-  font-family: 'Cinzel', serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--dark-bg);
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-  border: 2px solid var(--primary-color);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  letter-spacing: 1px;
-  box-shadow: 0 4px 15px rgba(201, 169, 97, 0.4);
+    width: 100%;
+    padding: 1rem 2rem;
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark-bg);
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.4);
 }
 
 .submit-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(201, 169, 97, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(201, 169, 97, 0.6);
 }
 
 .submit-btn:active {
-  transform: translateY(0);
+    transform: translateY(0);
 }
 
 .btn-icon {
-  font-size: 1.3rem;
+    font-size: 1.3rem;
 }
 
 /* Contact Info Cards */
 .contact-info-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .contact-info-card {
-  background: var(--card-bg);
-  border: 3px solid var(--secondary-color);
-  border-radius: 10px;
-  padding: 2rem;
-  text-align: center;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
+    background: var(--card-bg);
+    border: 3px solid var(--secondary-color);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
 }
 
 .contact-info-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(139, 115, 85, 0.4);
-  border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(139, 115, 85, 0.4);
+    border-color: var(--primary-color);
 }
 
 .info-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
 }
 
 .contact-info-card h3 {
-  font-family: 'Cinzel', serif;
-  font-size: 1.3rem;
-  color: var(--secondary-color);
-  margin-bottom: 0.8rem;
-  letter-spacing: 1px;
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.8rem;
+    letter-spacing: 1px;
 }
 
 .info-content {
-  font-family: 'Lora', serif;
-  font-size: 1rem;
-  color: var(--text-color);
-  margin-bottom: 0.5rem;
-  line-height: 1.6;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
 }
 
 .info-content-link {
-  display: inline-block;
-  font-family: 'Lora', serif;
-  font-size: 1rem;
-  color: var(--primary-color);
-  text-decoration: none;
-  margin-bottom: 0.5rem;
-  transition: all 0.3s ease;
-  font-weight: 600;
+    display: inline-block;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+    font-weight: 600;
 }
 
 .info-content-link:hover {
-  color: var(--accent-color);
-  text-decoration: underline;
+    color: var(--accent-color);
+    text-decoration: underline;
 }
 
 .info-description {
-  font-family: 'Lora', serif;
-  font-size: 0.9rem;
-  color: var(--text-color);
-  opacity: 0.8;
-  line-height: 1.5;
+    font-family: 'Lora', serif;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    line-height: 1.5;
 }
 
 .info-social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
 .social-link-small {
-  font-family: 'Cinzel', serif;
-  font-size: 0.9rem;
-  color: var(--secondary-color);
-  text-decoration: none;
-  padding: 0.4rem 0.8rem;
-  border: 2px solid var(--secondary-color);
-  border-radius: 4px;
-  transition: all 0.3s ease;
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border: 2px solid var(--secondary-color);
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
 .social-link-small:hover {
-  background: var(--secondary-color);
-  color: var(--light-text);
-  transform: scale(1.05);
+    background: var(--secondary-color);
+    color: var(--light-text);
+    transform: scale(1.05);
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .contact-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 
-  .contact-hero h1 {
-    font-size: 2.8rem;
-  }
+    .contact-hero h1 {
+        font-size: 2.8rem;
+    }
 }
 
 @media (max-width: 768px) {
-  .contact-hero {
-    padding: 3rem 1.5rem;
-  }
+    .contact-hero {
+        padding: 3rem 1.5rem;
+    }
 
-  .contact-hero h1 {
-    font-size: 2.2rem;
-  }
+    .contact-hero h1 {
+        font-size: 2.2rem;
+    }
 
-  .contact-hero-subtitle {
-    font-size: 1.2rem;
-  }
+    .contact-hero-subtitle {
+        font-size: 1.2rem;
+    }
 
-  .contact-hero-description {
-    font-size: 1rem;
-  }
+    .contact-hero-description {
+        font-size: 1rem;
+    }
 
-  .contact-section {
-    padding: 3rem 1.5rem;
-  }
+    .contact-section {
+        padding: 3rem 1.5rem;
+    }
 
-  .contact-form-wrapper {
-    padding: 2rem 1.5rem;
-  }
+    .contact-form-wrapper {
+        padding: 2rem 1.5rem;
+    }
 
-  .form-seal {
-    top: -25px;
-    right: 20px;
-    font-size: 2.5rem;
-  }
+    .form-seal {
+        top: -25px;
+        right: 20px;
+        font-size: 2.5rem;
+    }
 
-  .info-social-links {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
+    .info-social-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 
-  .social-link-small {
-    display: block;
-  }
+    .social-link-small {
+        display: block;
+    }
 }
 
 @media (max-width: 480px) {
-  .raven-icon {
-    font-size: 3rem;
-  }
+    .raven-icon {
+        font-size: 3rem;
+    }
 
-  .contact-hero h1 {
-    font-size: 1.8rem;
-  }
+    .contact-hero h1 {
+        font-size: 1.8rem;
+    }
 
-  .contact-form-wrapper {
-    padding: 1.5rem 1rem;
-  }
+    .contact-form-wrapper {
+        padding: 1.5rem 1rem;
+    }
 
-  .contact-info-card {
-    padding: 1.5rem;
-  }
+    .contact-info-card {
+        padding: 1.5rem;
+    }
 }
 
 /* ============================================
@@ -1472,226 +1507,224 @@ section {
 
 /* Houses Hero Section */
 .houses-hero {
-  background: linear-gradient(135deg, 
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(42, 36, 22, 0.7) 50%,
-    rgba(0, 0, 0, 0.8) 100%
-  );
-  padding: 4rem 2rem;
-  text-align: center;
-  position: relative;
+    background: linear-gradient(135deg,
+            rgba(0, 0, 0, 0.8) 0%,
+            rgba(42, 36, 22, 0.7) 50%,
+            rgba(0, 0, 0, 0.8) 100%);
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
 }
 
 .houses-hero-content {
-  max-width: 900px;
-  margin: 0 auto;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .houses-hero-title {
-  font-family: 'MedievalSharp', 'Cinzel', serif;
-  font-size: 3.5rem;
-  color: var(--primary-color);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  margin-bottom: 1rem;
-  letter-spacing: 2px;
+    font-family: 'MedievalSharp', 'Cinzel', serif;
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
 }
 
 .houses-hero-subtitle {
-  font-family: 'Lora', serif;
-  font-size: 1.3rem;
-  font-style: italic;
-  color: var(--light-text);
-  margin-bottom: 2rem;
+    font-family: 'Lora', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--light-text);
+    margin-bottom: 2rem;
 }
 
 /* Houses Grid */
 .houses-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-  background: linear-gradient(rgba(26, 26, 26, 0.95), rgba(26, 26, 26, 0.9));
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    background: linear-gradient(rgba(26, 26, 26, 0.95), rgba(26, 26, 26, 0.9));
 }
 
 /* House Card */
 .house-card {
-  background: var(--parchment);
-  border: 3px solid var(--secondary-color);
-  border-radius: 8px;
-  padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-  text-align: center;
-  position: relative;
+    background: var(--parchment);
+    border: 3px solid var(--secondary-color);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
 }
 
 .house-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: repeating-linear-gradient(0deg, 
-    transparent, 
-    transparent 2px, 
-    rgba(139, 115, 85, 0.02) 2px, 
-    rgba(139, 115, 85, 0.02) 4px
-  );
-  border-radius: 6px;
-  pointer-events: none;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(0deg,
+            transparent,
+            transparent 2px,
+            rgba(139, 115, 85, 0.02) 2px,
+            rgba(139, 115, 85, 0.02) 4px);
+    border-radius: 6px;
+    pointer-events: none;
 }
 
 .house-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--primary-color);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 .house-sigil {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  display: block;
-  position: relative;
-  z-index: 1;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    display: block;
+    position: relative;
+    z-index: 1;
 }
 
 .house-name {
-  font-family: 'Cinzel', serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--text-color);
-  margin-bottom: 0.8rem;
-  position: relative;
-  z-index: 1;
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 0.8rem;
+    position: relative;
+    z-index: 1;
 }
 
 .house-words {
-  font-family: 'Lora', serif;
-  font-size: 1.1rem;
-  font-style: italic;
-  color: var(--primary-color);
-  margin-bottom: 1.2rem;
-  position: relative;
-  z-index: 1;
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--primary-color);
+    margin-bottom: 1.2rem;
+    position: relative;
+    z-index: 1;
 }
 
 .house-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-  font-size: 0.95rem;
-  color: var(--text-color);
-  position: relative;
-  z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    position: relative;
+    z-index: 1;
 }
 
 .house-location,
 .house-region {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  font-family: 'Lora', serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: 'Lora', serif;
 }
 
 .house-description {
-  font-family: 'Lora', serif;
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--text-color);
-  text-align: left;
-  position: relative;
-  z-index: 1;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    text-align: left;
+    position: relative;
+    z-index: 1;
 }
 
 /* Houses CTA Section */
 .houses-cta {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2a2416 100%);
-  padding: 4rem 2rem;
-  text-align: center;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2416 100%);
+    padding: 4rem 2rem;
+    text-align: center;
 }
 
 .cta-buttons {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* Responsive Design for Houses Page */
 @media (max-width: 1024px) {
-  .houses-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
+    .houses-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
 
-  .houses-hero-title {
-    font-size: 2.8rem;
-  }
+    .houses-hero-title {
+        font-size: 2.8rem;
+    }
 }
 
 @media (max-width: 768px) {
-  .houses-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 2rem 1rem;
-  }
+    .houses-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 2rem 1rem;
+    }
 
-  .houses-hero {
-    padding: 3rem 1.5rem;
-  }
+    .houses-hero {
+        padding: 3rem 1.5rem;
+    }
 
-  .houses-hero-title {
-    font-size: 2.2rem;
-  }
+    .houses-hero-title {
+        font-size: 2.2rem;
+    }
 
-  .houses-hero-subtitle {
-    font-size: 1.1rem;
-  }
+    .houses-hero-subtitle {
+        font-size: 1.1rem;
+    }
 
-  .house-card {
-    padding: 1.5rem;
-  }
+    .house-card {
+        padding: 1.5rem;
+    }
 
-  .house-sigil {
-    font-size: 3.5rem;
-  }
+    .house-sigil {
+        font-size: 3.5rem;
+    }
 
-  .house-name {
-    font-size: 1.5rem;
-  }
+    .house-name {
+        font-size: 1.5rem;
+    }
 
-  .house-words {
-    font-size: 1rem;
-  }
+    .house-words {
+        font-size: 1rem;
+    }
 
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
 
-  .cta-button {
-    width: 100%;
-    max-width: 300px;
-  }
+    .cta-button {
+        width: 100%;
+        max-width: 300px;
+    }
 }
 
 @media (max-width: 480px) {
-  .houses-hero-title {
-    font-size: 1.8rem;
-  }
+    .houses-hero-title {
+        font-size: 1.8rem;
+    }
 
-  .house-sigil {
-    font-size: 3rem;
-  }
+    .house-sigil {
+        font-size: 3rem;
+    }
 
-  .house-name {
-    font-size: 1.3rem;
-  }
+    .house-name {
+        font-size: 1.3rem;
+    }
 }
 
 
@@ -1701,220 +1734,218 @@ section {
 
 /* Battles Hero Section */
 .battles-hero {
-  background: linear-gradient(135deg, 
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(42, 36, 22, 0.7) 50%,
-    rgba(0, 0, 0, 0.8) 100%
-  );
-  padding: 4rem 2rem;
-  text-align: center;
-  position: relative;
+    background: linear-gradient(135deg,
+            rgba(0, 0, 0, 0.8) 0%,
+            rgba(42, 36, 22, 0.7) 50%,
+            rgba(0, 0, 0, 0.8) 100%);
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
 }
 
 .battles-hero-content {
-  max-width: 900px;
-  margin: 0 auto;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .battles-hero-title {
-  font-family: 'MedievalSharp', 'Cinzel', serif;
-  font-size: 3.5rem;
-  color: var(--primary-color);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  margin-bottom: 1rem;
-  letter-spacing: 2px;
+    font-family: 'MedievalSharp', 'Cinzel', serif;
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
 }
 
 .battles-hero-subtitle {
-  font-family: 'Lora', serif;
-  font-size: 1.3rem;
-  font-style: italic;
-  color: var(--light-text);
-  margin-bottom: 2rem;
+    font-family: 'Lora', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--light-text);
+    margin-bottom: 2rem;
 }
 
 /* Battles Grid */
 .battles-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-  background: linear-gradient(rgba(26, 26, 26, 0.95), rgba(26, 26, 26, 0.9));
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    background: linear-gradient(rgba(26, 26, 26, 0.95), rgba(26, 26, 26, 0.9));
 }
 
 /* Battle Card */
 .battle-card {
-  background: var(--parchment);
-  border: 3px solid var(--secondary-color);
-  border-radius: 8px;
-  padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-  text-align: center;
-  position: relative;
+    background: var(--parchment);
+    border: 3px solid var(--secondary-color);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
 }
 
 .battle-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: repeating-linear-gradient(0deg, 
-    transparent, 
-    transparent 2px, 
-    rgba(139, 115, 85, 0.02) 2px, 
-    rgba(139, 115, 85, 0.02) 4px
-  );
-  border-radius: 6px;
-  pointer-events: none;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(0deg,
+            transparent,
+            transparent 2px,
+            rgba(139, 115, 85, 0.02) 2px,
+            rgba(139, 115, 85, 0.02) 4px);
+    border-radius: 6px;
+    pointer-events: none;
 }
 
 .battle-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--primary-color);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 .battle-icon {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-  display: block;
-  position: relative;
-  z-index: 1;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    display: block;
+    position: relative;
+    z-index: 1;
 }
 
 .battle-name {
-  font-family: 'Cinzel', serif;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--text-color);
-  margin-bottom: 1rem;
-  position: relative;
-  z-index: 1;
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
 }
 
 .battle-meta {
-  display: flex;
-  justify-content: space-around;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-  color: var(--text-color);
-  position: relative;
-  z-index: 1;
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    position: relative;
+    z-index: 1;
 }
 
 .battle-year,
 .battle-location {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  font-family: 'Lora', serif;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-family: 'Lora', serif;
 }
 
 .battle-participants,
 .battle-outcome {
-  font-family: 'Lora', serif;
-  font-size: 0.95rem;
-  margin-bottom: 0.8rem;
-  text-align: left;
-  color: var(--text-color);
-  position: relative;
-  z-index: 1;
+    font-family: 'Lora', serif;
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+    text-align: left;
+    color: var(--text-color);
+    position: relative;
+    z-index: 1;
 }
 
 .battle-description {
-  font-family: 'Lora', serif;
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: var(--text-color);
-  text-align: left;
-  position: relative;
-  z-index: 1;
+    font-family: 'Lora', serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    text-align: left;
+    position: relative;
+    z-index: 1;
 }
 
 /* Battles CTA Section */
 .battles-cta {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2a2416 100%);
-  padding: 4rem 2rem;
-  text-align: center;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2416 100%);
+    padding: 4rem 2rem;
+    text-align: center;
 }
 
 /* Responsive Design for Battles Page */
 @media (max-width: 1024px) {
-  .battles-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
+    .battles-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
 
-  .battles-hero-title {
-    font-size: 2.8rem;
-  }
+    .battles-hero-title {
+        font-size: 2.8rem;
+    }
 }
 
 @media (max-width: 768px) {
-  .battles-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 2rem 1rem;
-  }
+    .battles-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 2rem 1rem;
+    }
 
-  .battles-hero {
-    padding: 3rem 1.5rem;
-  }
+    .battles-hero {
+        padding: 3rem 1.5rem;
+    }
 
-  .battles-hero-title {
-    font-size: 2.2rem;
-  }
+    .battles-hero-title {
+        font-size: 2.2rem;
+    }
 
-  .battles-hero-subtitle {
-    font-size: 1.1rem;
-  }
+    .battles-hero-subtitle {
+        font-size: 1.1rem;
+    }
 
-  .battle-card {
-    padding: 1.5rem;
-  }
+    .battle-card {
+        padding: 1.5rem;
+    }
 
-  .battle-icon {
-    font-size: 3rem;
-  }
+    .battle-icon {
+        font-size: 3rem;
+    }
 
-  .battle-name {
-    font-size: 1.4rem;
-  }
+    .battle-name {
+        font-size: 1.4rem;
+    }
 
-  .battle-meta {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
+    .battle-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
 
-  .cta-button {
-    width: 100%;
-    max-width: 300px;
-  }
+    .cta-button {
+        width: 100%;
+        max-width: 300px;
+    }
 }
 
 @media (max-width: 480px) {
-  .battles-hero-title {
-    font-size: 1.8rem;
-  }
+    .battles-hero-title {
+        font-size: 1.8rem;
+    }
 
-  .battle-icon {
-    font-size: 2.5rem;
-  }
+    .battle-icon {
+        font-size: 2.5rem;
+    }
 
-  .battle-name {
-    font-size: 1.2rem;
-  }
+    .battle-name {
+        font-size: 1.2rem;
+    }
 }
 
 
@@ -2041,7 +2072,9 @@ section {
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .map-fallback {
@@ -2472,6 +2505,7 @@ button:focus,
 
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -2487,9 +2521,9 @@ button:focus,
    ============================================ */
 
 .main-footer {
-    background: linear-gradient(to bottom, 
-        rgba(26, 26, 26, 0.95), 
-        rgba(0, 0, 0, 1));
+    background: linear-gradient(to bottom,
+            rgba(26, 26, 26, 0.95),
+            rgba(0, 0, 0, 1));
     color: var(--light-text);
     border-top: 3px solid var(--secondary-color);
     padding: 4rem 2rem 2rem;
@@ -2783,7 +2817,7 @@ button:focus,
     .breadcrumbs {
         padding: 0.75rem 1rem;
     }
-    
+
     .breadcrumbs li {
         font-size: 0.85rem;
     }

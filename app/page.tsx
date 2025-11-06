@@ -3,6 +3,7 @@ import Link from "next/link";
 import Script from "next/script";
 import Header from "./components/Header";
 import ScrollButton from "./components/ScrollButton";
+import MapIframe from "./components/MapIframe";
 import { generateSEOMetadata, getCanonicalUrl } from "../lib/seo/metadata";
 import { generateWebPageSchema } from "../lib/seo/structured-data";
 import { SITE_URL } from "../lib/seo/constants";
@@ -141,16 +142,22 @@ export default function Home() {
             </div>
 
             <div className="map-container">
-              <iframe 
-                // src="about:blank"
-                src="https://quartermaester.info/"
-                className="got-map-iframe"
-                title="Game of Thrones Interactive Map - Character Journeys and Locations"
-                loading="lazy"
-                allow="fullscreen"
-                // style="width:100%; height:100%; border:0;"
-              />
-
+              <MapIframe />
+              
+              <div className="map-attribution">
+                <p>
+                  Interactive map powered by{' '}
+                  <a 
+                    href="https://quartermaester.info/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="map-link"
+                  >
+                    Quarter Maester
+                  </a>
+                  {' '}• Explore character journeys, locations, and timelines
+                </p>
+              </div>
             </div>
           </section>
 
