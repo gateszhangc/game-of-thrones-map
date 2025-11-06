@@ -3,7 +3,6 @@ import Link from "next/link";
 import Script from "next/script";
 import Header from "./components/Header";
 import ScrollButton from "./components/ScrollButton";
-import IframeLoader from "./components/IframeLoader";
 import { generateSEOMetadata, getCanonicalUrl } from "../lib/seo/metadata";
 import { generateWebPageSchema } from "../lib/seo/structured-data";
 import { SITE_URL } from "../lib/seo/constants";
@@ -111,7 +110,6 @@ export default function Home() {
       <Script id="home-page-schema" type="application/ld+json" strategy="beforeInteractive">
         {JSON.stringify(pageSchema)}
       </Script>
-      <IframeLoader />
       <div className="page-wrapper">
         <Header currentPage="Home" />
 
