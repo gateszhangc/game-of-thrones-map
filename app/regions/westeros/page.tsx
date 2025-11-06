@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import RegionHero from '../components/RegionHero';
 import RegionOverview from '../components/RegionOverview';
-import InteractiveMapSection from '../components/InteractiveMapSection';
 import RegionSection from '../components/RegionSection';
 import RelatedPages from '../components/RelatedPages';
 import { westerosData } from './data';
@@ -50,8 +49,6 @@ export default function WesterosPage() {
         />
 
         <RegionOverview overview={westerosData.overview} />
-
-        <InteractiveMapSection regionId={westerosData.id} />
 
         {westerosData.sections.map((section) => (
           <RegionSection

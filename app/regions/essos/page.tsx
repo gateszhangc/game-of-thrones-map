@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import RegionHero from '../components/RegionHero';
 import RegionOverview from '../components/RegionOverview';
-import InteractiveMapSection from '../components/InteractiveMapSection';
 import RegionSection from '../components/RegionSection';
 import RelatedPages from '../components/RelatedPages';
 import { essosData } from './data';
@@ -50,8 +49,6 @@ export default function EssosPage() {
         />
 
         <RegionOverview overview={essosData.overview} />
-
-        <InteractiveMapSection regionId={essosData.id} />
 
         {essosData.sections.map((section) => (
           <RegionSection
