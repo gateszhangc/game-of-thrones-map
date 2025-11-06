@@ -1,9 +1,9 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
 import RegionHero from '../components/RegionHero';
 import RegionOverview from '../components/RegionOverview';
 import RegionSection from '../components/RegionSection';
 import RelatedPages from '../components/RelatedPages';
+import Header from '../../components/Header';
 import { westerosData } from './data';
 
 import { generateSEOMetadata, getCanonicalUrl } from '../../../lib/seo/metadata';
@@ -36,23 +36,7 @@ export default function WesterosPage() {
         {JSON.stringify(pageSchema)}
       </Script>
       <div className="page-wrapper">
-      <header className="main-header">
-        <nav>
-          <div className="logo">
-            <Link href="/">
-              <span className="logo-text">Game of Thrones</span>
-              <span className="logo-subtext">Map</span>
-            </Link>
-          </div>
-          <ul className="nav-links">
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/#interactive-map">Locations</Link></li>
-            <li><Link href="/houses">Great Houses</Link></li>
-            <li><Link href="/battles">Battles</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
-          </ul>
-        </nav>
-      </header>
+      <Header currentPage="Locations" />
 
       <main>
         <RegionHero 

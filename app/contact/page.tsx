@@ -1,25 +1,10 @@
 import Link from "next/link";
+import Header from "../components/Header";
 
 export default function ContactPage() {
   return (
     <div className="page-wrapper">
-      <header className="main-header">
-        <nav>
-          <div className="logo">
-            <Link href="/">
-              <span className="logo-text">Game of Thrones</span>
-              <span className="logo-subtext">Map</span>
-            </Link>
-          </div>
-          <ul className="nav-links">
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/">Locations</Link></li>
-            <li><Link href="/">Great Houses</Link></li>
-            <li><Link href="/">About</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
-          </ul>
-        </nav>
-      </header>
+      <Header currentPage="Contact" />
       <main className="contact-page">
         <section className="contact-hero">
           <div className="contact-hero-content">

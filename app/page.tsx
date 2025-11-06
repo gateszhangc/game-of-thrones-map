@@ -1,6 +1,7 @@
-import Link from "next/link";
 import { Metadata } from "next";
+import Link from "next/link";
 import Script from "next/script";
+import Header from "./components/Header";
 import { generateSEOMetadata, getCanonicalUrl } from "../lib/seo/metadata";
 import { generateWebPageSchema } from "../lib/seo/structured-data";
 import { SITE_URL } from "../lib/seo/constants";
@@ -20,19 +21,6 @@ export const metadata: Metadata = generateSEOMetadata({
   canonicalUrl: getCanonicalUrl("/")
 });
 
-interface NavLink {
-  label: string;
-  href: string;
-  isCurrent: boolean;
-}
-
-const NAV_LINKS: NavLink[] = [
-  { label: "Home", href: "/", isCurrent: true },
-  { label: "Locations", href: "/#interactive-map", isCurrent: false },
-  { label: "Great Houses", href: "/houses", isCurrent: false },
-  { label: "Battles", href: "/battles", isCurrent: false },
-  { label: "Contact", href: "/contact", isCurrent: false }
-];
 
 const MAP_CONTROLS = [
   { region: "westeros", label: "Westeros" },
@@ -122,26 +110,7 @@ export default function Home() {
         {JSON.stringify(pageSchema)}
       </Script>
       <div className="page-wrapper">
-        <header className="main-header" role="banner">
-          <nav aria-label="Primary">
-            <div className="logo">
-              <Link href="/" aria-label="Game of Thrones Map home">
-                <span className="logo-text">Game of Thrones</span>
-                <span className="logo-subtext">Map</span>
-              </Link>
-            </div>
-
-            <ul className="nav-links">
-              {NAV_LINKS.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href} aria-current={link.isCurrent ? "page" : undefined}>
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </header>
+        <Header currentPage="Home" />
 
         <main id="main-content">
           <section className="hero" aria-labelledby="hero-title">

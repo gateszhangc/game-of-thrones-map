@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Script from 'next/script';
 import BattleCard from './BattleCard';
+import Header from '../components/Header';
 import { battles } from './data';
 import { generateSEOMetadata, getCanonicalUrl } from '../../lib/seo/metadata';
 import { generateWebPageSchema } from '../../lib/seo/structured-data';
@@ -31,22 +32,7 @@ export default function BattlesPage() {
         {JSON.stringify(pageSchema)}
       </Script>
       <div className="page-wrapper">
-      <header className="main-header">
-        <nav>
-          <div className="logo">
-            <Link href="/">
-              <span className="logo-text">Game of Thrones</span>
-              <span className="logo-subtext">Map</span>
-            </Link>
-          </div>
-          <ul className="nav-links">
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/">Locations</Link></li>
-            <li><Link href="/houses">Great Houses</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
-          </ul>
-        </nav>
-      </header>
+      <Header currentPage="Battles" />
 
       <main>
         {/* Hero Section */}
