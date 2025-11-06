@@ -1,15 +1,7 @@
-'use client';
-
 import Link from 'next/link';
+import BackToTopButton from './BackToTopButton';
 
 export default function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
-
   return (
     <footer className="main-footer">
       <div className="footer-content">
@@ -38,9 +30,9 @@ export default function Footer() {
           <h4>Resources</h4>
           <ul>
             <li>
-              <a 
-                href="https://www.hbo.com/game-of-thrones" 
-                target="_blank" 
+              <a
+                href="https://www.hbo.com/game-of-thrones"
+                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="HBO Official Game of Thrones Website"
               >
@@ -48,9 +40,9 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a 
-                href="https://awoiaf.westeros.org/" 
-                target="_blank" 
+              <a
+                href="https://awoiaf.westeros.org/"
+                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="A Wiki of Ice and Fire"
               >
@@ -58,9 +50,9 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a 
-                href="https://quartermaester.info/" 
-                target="_blank" 
+              <a
+                href="https://quartermaester.info/"
+                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Quartermaester - Game of Thrones Resources"
               >
@@ -78,27 +70,27 @@ export default function Footer() {
               📧 Contact Us
             </Link>
             <div className="social-links">
-              <a 
-                href="https://twitter.com/gameofthrones" 
-                target="_blank" 
+              <a
+                href="https://twitter.com/gameofthrones"
+                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow on Twitter/X"
                 className="social-link"
               >
                 𝕏
               </a>
-              <a 
-                href="https://www.facebook.com/GameOfThrones" 
-                target="_blank" 
+              <a
+                href="https://www.facebook.com/GameOfThrones"
+                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow on Facebook"
                 className="social-link"
               >
                 📘
               </a>
-              <a 
-                href="https://www.instagram.com/gameofthrones/" 
-                target="_blank" 
+              <a
+                href="https://www.instagram.com/gameofthrones/"
+                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow on Instagram"
                 className="social-link"
@@ -112,13 +104,7 @@ export default function Footer() {
 
       {/* Back to Top Button */}
       <div className="footer-back-to-top">
-        <button 
-          onClick={scrollToTop}
-          className="back-to-top-btn"
-          aria-label="Back to top"
-        >
-          ↑ Back to Top
-        </button>
+        <BackToTopButton />
       </div>
 
       {/* Copyright and Legal */}
