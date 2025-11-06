@@ -206,54 +206,6 @@ export default function Home() {
             </div>
           </section>
         </main>
-
-        <footer className="main-footer">
-          <div className="footer-content">
-            <section className="footer-section" aria-labelledby="quick-links-title">
-              <h4 id="quick-links-title">Quick Links</h4>
-              <ul>
-                {QUICK_LINKS.map((link) => (
-                  <li key={link.href}>
-                    {link.href.startsWith("http") || link.href.endsWith(".xml") ? (
-                      <a href={link.href} target="_blank" rel="noopener noreferrer">
-                        {link.label}
-                      </a>
-                    ) : (
-                      <Link href={link.href}>{link.label}</Link>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </section>
-
-            <section className="footer-section" aria-labelledby="contact-title">
-              <h4 id="contact-title">Contact</h4>
-              <address>
-                <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
-              </address>
-            </section>
-
-            <section className="footer-section" aria-labelledby="follow-us-title">
-              <h4 id="follow-us-title">Follow Us</h4>
-              <div className="social-links">
-                {SOCIAL_LINKS.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    className={`social-icon ${link.iconClassName}`}
-                    aria-label={link.label}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  />
-                ))}
-              </div>
-            </section>
-          </div>
-
-          <div className="footer-bottom">
-            <p>&copy; {CURRENT_YEAR} Game of Thrones Map. All rights reserved.</p>
-          </div>
-        </footer>
       </div>
     </>
   );

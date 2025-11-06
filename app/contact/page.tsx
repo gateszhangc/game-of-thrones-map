@@ -128,29 +128,6 @@ export default function ContactPage() {
           </div>
         </section>
       </main>
-
-      <footer className="main-footer">
-        <div className="footer-content">
-          <section className="footer-section">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><Link href="/privacy">Privacy Policy</Link></li>
-              <li><Link href="/terms">Terms of Use</Link></li>
-            </ul>
-          </section>
-
-          <section className="footer-section">
-            <h4>Contact</h4>
-            <address>
-              <a href="mailto:hello@thegameofthronesmap.com">hello@thegameofthronesmap.com</a>
-            </address>
-          </section>
-        </div>
-
-        <div className="footer-bottom">
-          <p>&copy; 2025 Game of Thrones Map. All rights reserved.</p>
-        </div>
-      </footer>
     </div>
   );
 }

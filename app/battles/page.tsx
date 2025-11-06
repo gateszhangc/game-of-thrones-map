@@ -57,26 +57,6 @@ export default function BattlesPage() {
           </div>
         </section>
       </main>
-
-      <footer className="main-footer">
-        <div className="footer-content">
-          <div className="footer-section">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><Link href="/privacy">Privacy Policy</Link></li>
-              <li><Link href="/terms">Terms of Use</Link></li>
-              <li><Link href="/sitemap.xml">Sitemap</Link></li>
-            </ul>
-          </div>
-          <div className="footer-section">
-            <h4>Contact</h4>
-            <p>Email: <a href="mailto:hello@thegameofthronesmap.com">hello@thegameofthronesmap.com</a></p>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <p>&copy; 2024 Game of Thrones Map. All rights reserved.</p>
-        </div>
-      </footer>
     </div>
   );
 }

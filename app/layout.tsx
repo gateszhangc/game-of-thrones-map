@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Script from "next/script";
 import type { ReactNode } from "react";
+import Footer from "./components/Footer";
 
 const SITE_URL = "https://thegameofthronesmap.com";
 const PAGE_TITLE = "Game of Thrones Map - Interactive Atlas of Westeros and Essos";
@@ -101,6 +102,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body suppressHydrationWarning>
         {children}
+        <Footer />
         <Script id="site-structured-data" type="application/ld+json" strategy="beforeInteractive">
           {JSON.stringify(structuredData)}
         </Script>
