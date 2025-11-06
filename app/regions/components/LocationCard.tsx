@@ -31,13 +31,13 @@ export default function LocationCard({ location, regionId }: LocationCardProps) 
       <div className="location-card-body">
         <p className="location-description">{location.description}</p>
         <div className="location-significance">
-          <strong>重要性：</strong>
+          <strong>Significance:</strong>
           <p>{location.significance}</p>
         </div>
       </div>
-      
+
       <div className="location-card-footer">
-        <span className="location-type">{location.type === 'city' ? '城市' : location.type === 'castle' ? '城堡' : '地标'}</span>
+        <span className="location-type">{location.type === 'city' ? 'City' : location.type === 'castle' ? 'Castle' : 'Landmark'}</span>
       </div>
     </article>
   );

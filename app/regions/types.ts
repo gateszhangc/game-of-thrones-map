@@ -1,7 +1,7 @@
-// 地点类型定义
+// Location type definition
 export type LocationType = 'city' | 'castle' | 'landmark' | 'region';
 
-// 地点接口
+// Location interface
 export interface Location {
   id: string;
   name: string;
@@ -16,7 +16,7 @@ export interface Location {
   externalLink?: string;
 }
 
-// 区域分区接口
+// Region section interface
 export interface RegionSection {
   id: string;
   name: string;
@@ -26,14 +26,14 @@ export interface RegionSection {
   locations: Location[];
 }
 
-// 配色方案接口
+// Color scheme interface
 export interface ColorScheme {
   primary: string;
   secondary: string;
   accent: string;
 }
 
-// 概览信息接口
+// Overview information interface
 export interface Overview {
   geography: string;
   climate: string;
@@ -41,7 +41,7 @@ export interface Overview {
   population: string;
 }
 
-// 区域数据接口
+// Region data interface
 export interface RegionData {
   id: 'westeros' | 'essos';
   name: string;

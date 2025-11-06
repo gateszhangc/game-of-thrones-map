@@ -17,12 +17,12 @@ export default function RegionSection({ section, regionId }: RegionSectionProps)
           <div className="region-section-info">
             {section.climate && (
               <div className="info-item">
-                <strong>气候：</strong> {section.climate}
+                <strong>Climate:</strong> {section.climate}
               </div>
             )}
             {section.culture && (
               <div className="info-item">
-                <strong>文化：</strong> {section.culture}
+                <strong>Culture:</strong> {section.culture}
               </div>
             )}
           </div>

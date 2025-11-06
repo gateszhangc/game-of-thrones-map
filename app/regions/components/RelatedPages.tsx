@@ -6,49 +6,49 @@ interface RelatedPagesProps {
 
 export default function RelatedPages({ currentRegion }: RelatedPagesProps) {
   const otherRegion = currentRegion === 'westeros' ? 'essos' : 'westeros';
-  const otherRegionName = otherRegion === 'westeros' ? '维斯特洛' : '厄索斯';
+  const otherRegionName = otherRegion === 'westeros' ? 'Westeros' : 'Essos';
 
   return (
     <section className="related-pages" aria-labelledby="related-pages-title">
       <div className="section-header">
-        <h2 id="related-pages-title">相关页面</h2>
+        <h2 id="related-pages-title">Related Pages</h2>
         <div className="ornament" aria-hidden="true" />
       </div>
 
       <div className="related-pages-grid">
         <article className="related-page-card">
           <div className="related-page-icon" aria-hidden="true">🗺️</div>
-          <h3>探索{otherRegionName}</h3>
-          <p>发现{otherRegionName}的地点、文化和历史</p>
+          <h3>Explore {otherRegionName}</h3>
+          <p>Discover the locations, culture, and history of {otherRegionName}</p>
           <Link href={`/regions/${otherRegion}`} className="related-page-link">
-            访问{otherRegionName}
+            Visit {otherRegionName}
           </Link>
         </article>
 
         <article className="related-page-card">
           <div className="related-page-icon" aria-hidden="true">🏰</div>
-          <h3>伟大家族</h3>
-          <p>了解统治七大王国的贵族家族</p>
+          <h3>Great Houses</h3>
+          <p>Learn about the noble families that rule the Seven Kingdoms</p>
           <Link href="/houses" className="related-page-link">
-            查看家族
+            View Houses
           </Link>
         </article>
 
         <article className="related-page-card">
           <div className="related-page-icon" aria-hidden="true">⚔️</div>
-          <h3>历史战役</h3>
-          <p>探索塑造王国的传奇战役</p>
+          <h3>Historic Battles</h3>
+          <p>Explore the legendary battles that shaped the kingdoms</p>
           <Link href="/battles" className="related-page-link">
-            查看战役
+            View Battles
           </Link>
         </article>
 
         <article className="related-page-card">
           <div className="related-page-icon" aria-hidden="true">🌍</div>
-          <h3>交互式地图</h3>
-          <p>在完整的世界地图上探索所有地点</p>
+          <h3>Interactive Map</h3>
+          <p>Explore all locations on the complete world map</p>
           <Link href="/#interactive-map" className="related-page-link">
-            查看地图
+            View Map
           </Link>
         </article>
       </div>

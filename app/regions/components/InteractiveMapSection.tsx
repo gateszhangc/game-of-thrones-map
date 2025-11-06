@@ -28,7 +28,7 @@ export default function InteractiveMapSection({
   return (
     <section className="interactive-map-section" aria-labelledby="map-title">
       <div className="section-header">
-        <h2 id="map-title">交互式地图</h2>
+        <h2 id="map-title">Interactive Map</h2>
         <div className="ornament" aria-hidden="true" />
       </div>
 
@@ -36,24 +36,24 @@ export default function InteractiveMapSection({
         {isLoading && (
           <div className="map-loading" aria-live="polite">
             <div className="loading-spinner" />
-            <p>地图加载中...</p>
+            <p>Loading map...</p>
           </div>
         )}
 
         {hasError && fallbackImageUrl ? (
           <div className="map-fallback">
-            <img 
-              src={fallbackImageUrl} 
-              alt={`${regionId === 'westeros' ? '维斯特洛' : '厄索斯'}地图`}
+            <img
+              src={fallbackImageUrl}
+              alt={`${regionId === 'westeros' ? 'Westeros' : 'Essos'} Map`}
               className="fallback-map-image"
             />
-            <p className="map-error-message">交互式地图暂时无法加载，显示静态地图</p>
+            <p className="map-error-message">Interactive map temporarily unavailable, showing static map</p>
           </div>
         ) : !hasError && (
           <iframe
             src={embedUrl}
             className="got-map-iframe"
-            title={`${regionId === 'westeros' ? '维斯特洛' : '厄索斯'}交互式地图 - 角色旅程和地点`}
+            title={`${regionId === 'westeros' ? 'Westeros' : 'Essos'} Interactive Map - Character Journeys and Locations`}
             loading="lazy"
             allow="fullscreen"
             onLoad={handleLoad}
@@ -63,7 +63,7 @@ export default function InteractiveMapSection({
 
         <div className="map-attribution">
           <p>
-            交互式地图由{' '}
+            Interactive map provided by{' '}
             <a
               href="https://quartermaester.info/"
               target="_blank"
@@ -72,7 +72,7 @@ export default function InteractiveMapSection({
             >
               Quarter Maester
             </a>
-            {' '}提供 • 探索角色旅程、地点和时间线
+            {' '}• Explore character journeys, locations, and timelines
           </p>
         </div>
       </div>
