@@ -2,6 +2,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
 import Header from "./components/Header";
+import ScrollButton from "./components/ScrollButton";
+import IframeLoader from "./components/IframeLoader";
 import { generateSEOMetadata, getCanonicalUrl } from "../lib/seo/metadata";
 import { generateWebPageSchema } from "../lib/seo/structured-data";
 import { SITE_URL } from "../lib/seo/constants";
@@ -109,6 +111,7 @@ export default function Home() {
       <Script id="home-page-schema" type="application/ld+json" strategy="beforeInteractive">
         {JSON.stringify(pageSchema)}
       </Script>
+      <IframeLoader />
       <div className="page-wrapper">
         <Header currentPage="Home" />
 
@@ -118,9 +121,9 @@ export default function Home() {
               <h1 id="hero-title">Game of Thrones Map: Explore the World of Ice and Fire</h1>
               <p className="hero-subtitle">Discover the complete Game of Thrones world map featuring the Seven Kingdoms, Westeros, Essos, and the interactive map of all major locations and houses.</p>
               <div className="hero-cta">
-                <a href="#interactive-map" className="cta-button">
+                <ScrollButton targetId="interactive-map" className="cta-button">
                   Explore Map
-                </a>
+                </ScrollButton>
                 <Link href="/houses" className="cta-button secondary">
                   View Houses
                 </Link>
@@ -141,7 +144,8 @@ export default function Home() {
 
             <div className="map-container">
               <iframe 
-                src="https://quartermaester.info/"
+                src="about:blank"
+                data-src="https://quartermaester.info/"
                 className="got-map-iframe"
                 title="Game of Thrones Interactive Map - Character Journeys and Locations"
                 loading="lazy"
