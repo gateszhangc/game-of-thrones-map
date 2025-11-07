@@ -1,5 +1,27 @@
+import { Metadata } from "next";
 import Link from "next/link";
 import Header from "../components/Header";
+import { generateSEOMetadata, getCanonicalUrl } from "../../lib/seo/metadata";
+import { getKeywordList } from "../../lib/seo/longTailKeywords";
+
+const CONTACT_TITLE = "Contact Game of Thrones Map | Send a Raven";
+const CONTACT_DESCRIPTION =
+  'Contact us for "what are the 7 kingdoms in game of thrones map", "where is braavos in game of thrones map", "where is dragonstone in game of thrones map".';
+const CONTACT_KEYWORDS = getKeywordList(
+  [
+    "what are the 7 kingdoms in game of thrones map",
+    "where is braavos in game of thrones map",
+    "where is dragonstone in game of thrones map"
+  ],
+  3
+);
+
+export const metadata: Metadata = generateSEOMetadata({
+  title: CONTACT_TITLE,
+  description: CONTACT_DESCRIPTION,
+  keywords: CONTACT_KEYWORDS,
+  canonicalUrl: getCanonicalUrl("/contact")
+});
 
 export default function ContactPage() {
   return (
