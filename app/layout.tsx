@@ -3,12 +3,12 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import type { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/react";
+import { SITE_DESCRIPTION, SITE_PRIMARY_TITLE_SUFFIX } from "../lib/seo/constants";
 import Footer from "./components/Footer";
 
 const SITE_URL = "https://thegameofthronesmap.com";
-const PAGE_TITLE = "Game of Thrones Map | Interactive Westeros & Essos Guide";
-const PAGE_DESCRIPTION =
-  "Explore the Game of Thrones map of Westeros and Essos to track Seven Kingdoms houses and locate Braavos, Dragonstone, and Meereen with answers to fan questions.";
+const PAGE_TITLE = `Game of Thrones Map | ${SITE_PRIMARY_TITLE_SUFFIX}`;
+const PAGE_DESCRIPTION = SITE_DESCRIPTION;
 const GA_MEASUREMENT_ID = "G-B1WMBOGCV1";
 
 const structuredData = {
@@ -114,19 +114,20 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             `
           }}
         />
-        <Script
-          id="google-gtag-src"
-          strategy="afterInteractive"
+        <script
+          async
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
         />
-        <Script id="google-gtag" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}');
-          `}
-        </Script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_MEASUREMENT_ID}');
+            `
+          }}
+        />
         {children}
         <Footer />
         <Script id="site-structured-data" type="application/ld+json" strategy="beforeInteractive">

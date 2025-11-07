@@ -4,11 +4,10 @@ import Script from "next/script";
 import Header from "./components/Header";
 import { generateSEOMetadata, getCanonicalUrl } from "../lib/seo/metadata";
 import { generateWebPageSchema } from "../lib/seo/structured-data";
-import { SITE_URL } from "../lib/seo/constants";
+import { SITE_DESCRIPTION, SITE_PRIMARY_TITLE_SUFFIX, SITE_URL } from "../lib/seo/constants";
 
-const HOME_TITLE = "Game of Thrones Map | Interactive Westeros & Essos Guide";
-const HOME_DESCRIPTION =
-  "Explore the Game of Thrones map of Westeros and Essos to track Seven Kingdoms houses and locate Braavos, Dragonstone, and Meereen with answers to fan questions.";
+const HOME_TITLE = `Game of Thrones Map | ${SITE_PRIMARY_TITLE_SUFFIX}`;
+const HOME_DESCRIPTION = SITE_DESCRIPTION;
 
 export const metadata: Metadata = generateSEOMetadata({
   title: HOME_TITLE,
