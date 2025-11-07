@@ -6,9 +6,9 @@ import { Analytics } from "@vercel/analytics/react";
 import Footer from "./components/Footer";
 
 const SITE_URL = "https://thegameofthronesmap.com";
-const PAGE_TITLE = "Game of Thrones Map - Interactive Atlas of Westeros and Essos";
+const PAGE_TITLE = "Game of Thrones Map | Interactive Westeros & Essos Guide";
 const PAGE_DESCRIPTION =
-  "Explore the detailed interactive map of Game of Thrones. Discover all locations from Westeros to Essos, including major houses, cities, and historical landmarks.";
+  "Explore the Game of Thrones map of Westeros and Essos to track Seven Kingdoms houses and locate Braavos, Dragonstone, and Meereen with answers to fan questions.";
 const GA_MEASUREMENT_ID = "G-B1WMBOGCV1";
 
 const structuredData = {
@@ -101,17 +101,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           rel="stylesheet"
         />
         <link rel="stylesheet" href="/css/style.css" />
-        <Script id="ms-clarity" strategy="afterInteractive">
-          {`
-            (function(c,l,a,r,i,t,y){
-              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "u2an6idi46");
-          `}
-        </Script>
       </head>
       <body suppressHydrationWarning>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "u2an6idi46");
+            `
+          }}
+        />
         <Script
           id="google-gtag-src"
           strategy="afterInteractive"

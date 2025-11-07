@@ -6,9 +6,13 @@ import { generateSEOMetadata, getCanonicalUrl } from "../lib/seo/metadata";
 import { generateWebPageSchema } from "../lib/seo/structured-data";
 import { SITE_URL } from "../lib/seo/constants";
 
+const HOME_TITLE = "Game of Thrones Map | Interactive Westeros & Essos Guide";
+const HOME_DESCRIPTION =
+  "Explore the Game of Thrones map of Westeros and Essos to track Seven Kingdoms houses and locate Braavos, Dragonstone, and Meereen with answers to fan questions.";
+
 export const metadata: Metadata = generateSEOMetadata({
-  title: "Game of Thrones Map - Interactive World Map of Westeros & Essos",
-  description: "Explore the complete Game of Thrones map featuring the Seven Kingdoms, Westeros, Essos, and all major locations. Interactive map with houses, battles, and character journeys.",
+  title: HOME_TITLE,
+  description: HOME_DESCRIPTION,
   keywords: [
     "game of thrones map",
     "game of thrones world map",
@@ -79,8 +83,8 @@ const RESOURCE_LINKS = [
 export default function Home() {
   const pageSchema = generateWebPageSchema({
     url: SITE_URL,
-    name: "Game of Thrones Map - Interactive World Map",
-    description: "Explore the complete Game of Thrones map featuring the Seven Kingdoms, Westeros, Essos, and all major locations."
+    name: HOME_TITLE,
+    description: HOME_DESCRIPTION
   });
 
   return (
@@ -138,7 +142,7 @@ export default function Home() {
                 <a 
                   href="https://quartermaester.info/" 
                   target="_blank" 
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer nofollow"
                   className="map-link"
                 >
                   Quarter Maester
@@ -179,7 +183,7 @@ export default function Home() {
                 <article key={resource.href} className="resource-card">
                   <h3>{resource.title}</h3>
                   <p>{resource.description}</p>
-                  <a href={resource.href} className="resource-link" target="_blank" rel="noopener noreferrer">
+                  <a href={resource.href} className="resource-link" target="_blank" rel="noopener noreferrer nofollow">
                     Visit Site
                   </a>
                 </article>

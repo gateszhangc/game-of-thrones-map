@@ -33,7 +33,7 @@ export default function Footer() {
               <a
                 href="https://www.hbo.com/game-of-thrones"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 aria-label="HBO Official Game of Thrones Website"
               >
                 HBO Official
@@ -43,7 +43,7 @@ export default function Footer() {
               <a
                 href="https://awoiaf.westeros.org/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 aria-label="A Wiki of Ice and Fire"
               >
                 Wiki of Ice & Fire
@@ -53,7 +53,7 @@ export default function Footer() {
               <a
                 href="https://quartermaester.info/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 aria-label="Quartermaester - Game of Thrones Resources"
               >
                 Quartermaester
@@ -73,7 +73,7 @@ export default function Footer() {
               <a
                 href="https://twitter.com/gameofthrones"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 aria-label="Follow on Twitter/X"
                 className="social-link"
               >
@@ -82,7 +82,7 @@ export default function Footer() {
               <a
                 href="https://www.facebook.com/GameOfThrones"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 aria-label="Follow on Facebook"
                 className="social-link"
               >
@@ -91,7 +91,7 @@ export default function Footer() {
               <a
                 href="https://www.instagram.com/gameofthrones/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 aria-label="Follow on Instagram"
                 className="social-link"
               >

@@ -105,9 +105,9 @@ export default function ContactPage() {
                 <h3>Follow Our Journey</h3>
                 <p className="info-content">Stay updated on new locations</p>
                 <div className="info-social-links">
-                  <a href="https://x.com/GameOfThrones" target="_blank" rel="noopener noreferrer" className="social-link-small">Twitter</a>
-                  <a href="https://www.facebook.com/GameOfThrones" target="_blank" rel="noopener noreferrer" className="social-link-small">Facebook</a>
-                  <a href="https://www.instagram.com/gameofthrones" target="_blank" rel="noopener noreferrer" className="social-link-small">Instagram</a>
+                  <a href="https://x.com/GameOfThrones" target="_blank" rel="noopener noreferrer nofollow" className="social-link-small">Twitter</a>
+                  <a href="https://www.facebook.com/GameOfThrones" target="_blank" rel="noopener noreferrer nofollow" className="social-link-small">Facebook</a>
+                  <a href="https://www.instagram.com/gameofthrones" target="_blank" rel="noopener noreferrer nofollow" className="social-link-small">Instagram</a>
                 </div>
               </div>
 

@@ -61,7 +61,7 @@ export default function InteractiveMapClient({
           <a
             href="https://quartermaester.info/"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer nofollow"
             className="map-link"
           >
             Quarter Maester
