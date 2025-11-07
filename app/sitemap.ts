@@ -44,6 +44,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  // 地点页面
+  const locationPages = [
+    {
+      url: `${SITE_URL}/locations`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+  ];
+
   // 未来将添加的页面（暂时注释，等创建后取消注释）
   const futurePages = [
     // FAQ页面
@@ -53,7 +63,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     //   changeFrequency: 'monthly' as const,
     //   priority: 0.7,
     // },
-    
+     
     // 城市页面
     // {
     //   url: `${SITE_URL}/locations/kings-landing`,
@@ -85,7 +95,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     //   changeFrequency: 'monthly' as const,
     //   priority: 0.6,
     // },
-    
+     
     // 专题页面
     // {
     //   url: `${SITE_URL}/regions/the-north`,
@@ -107,5 +117,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // },
   ];
 
-  return [...staticPages];
+  return [...staticPages, ...locationPages];
 }
