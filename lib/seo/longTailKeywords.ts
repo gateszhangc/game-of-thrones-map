@@ -1,11 +1,18 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const LONG_TAIL_KEYWORD_FILE = path.join(
-  process.cwd(),
-  "seo",
-  "game-of-thrones-map_broad-match_us_2025-11-06_que.csv"
-);
+const LONG_TAIL_KEYWORD_FILES = [
+  path.join(
+    process.cwd(),
+    "seo",
+    "game-of-thrones-map_broad-match_us_2025-11-06_que.csv"
+  ),
+  path.join(
+    process.cwd(),
+    "seo",
+    "game-of-thrones-map_broad-match_us_2025-11-06.csv"
+  )
+];
 
 type LongTailMeta = {
   titleSuffix: string;
@@ -25,18 +32,26 @@ function loadLongTailKeywords(): string[] {
     return cachedKeywords;
   }
 
-  if (!fs.existsSync(LONG_TAIL_KEYWORD_FILE)) {
-    cachedKeywords = [];
-    return cachedKeywords;
+  const keywords = new Set<string>();
+
+  for (const filePath of LONG_TAIL_KEYWORD_FILES) {
+    if (!fs.existsSync(filePath)) {
+      continue;
+    }
+
+    const content = fs.readFileSync(filePath, "utf-8");
+    const rows = content.split(/\r?\n/);
+    rows.shift(); // drop header
+
+    for (const row of rows) {
+      const keyword = extractKeywordFromRow(row);
+      if (keyword) {
+        keywords.add(keyword);
+      }
+    }
   }
 
-  const content = fs.readFileSync(LONG_TAIL_KEYWORD_FILE, "utf-8");
-  const [, ...rows] = content.split(/\r?\n/);
-
-  cachedKeywords = rows
-    .map(extractKeywordFromRow)
-    .filter((keyword): keyword is string => Boolean(keyword));
-
+  cachedKeywords = Array.from(keywords);
   return cachedKeywords;
 }
 
@@ -75,6 +90,33 @@ export function getKeywordByTerm(term: string, fallback?: string): string {
   }
 
   return fallback ?? term;
+}
+
+export function getKeywordList(
+  termList: string[],
+  limit = termList.length
+): string[] {
+  const seen = new Set<string>();
+  const masterKeywords = loadLongTailKeywords();
+
+  termList.forEach((term) => {
+    const keyword = getKeywordByTerm(term);
+    if (keyword) {
+      const normalized = keyword.toLowerCase();
+      if (!seen.has(normalized)) {
+        seen.add(normalized);
+      }
+    }
+  });
+
+  const orderedKeywords = Array.from(seen).map((keyword) => {
+    const source = masterKeywords.find(
+      (candidate) => candidate.toLowerCase() === keyword
+    );
+    return source ?? keyword;
+  });
+
+  return orderedKeywords.slice(0, limit);
 }
 
 function toTitleCase(value: string): string {

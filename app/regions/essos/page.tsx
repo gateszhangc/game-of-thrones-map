@@ -9,25 +9,32 @@ import { essosData } from './data';
 import { generateSEOMetadata, getCanonicalUrl } from '../../../lib/seo/metadata';
 import { generateWebPageSchema } from '../../../lib/seo/structured-data';
 import Script from 'next/script';
+import { getKeywordList } from '../../../lib/seo/longTailKeywords';
 
-export const metadata: Metadata = generateSEOMetadata({
-  title: 'Game of Thrones Essos Map - Free Cities & Eastern Continent Locations',
-  description: 'Explore the complete Essos map from Game of Thrones. Discover the Free Cities, Dothraki Sea, Slaver\'s Bay, and locations like Braavos, Meereen, Qarth, and Volantis. Interactive map of Essos geography.',
-  keywords: [
+const ESSOS_TITLE = 'Essos Map | Game of Thrones Free Cities';
+const ESSOS_DESCRIPTION =
+  'Explore the Game of Thrones Essos map covering map of Game of Thrones Essos, Free Cities map, and the broader Game of Thrones map Essos.';
+const ESSOS_KEYWORDS = getKeywordList(
+  [
     'game of thrones essos map',
     'map of game of thrones essos',
-    'essos map',
-    'free cities map',
-    'game of thrones map essos'
+    'free cities map'
   ],
+  3
+);
+
+export const metadata: Metadata = generateSEOMetadata({
+  title: ESSOS_TITLE,
+  description: ESSOS_DESCRIPTION,
+  keywords: ESSOS_KEYWORDS,
   canonicalUrl: getCanonicalUrl('/regions/essos')
 });
 
 export default function EssosPage() {
   const pageSchema = generateWebPageSchema({
     url: getCanonicalUrl('/regions/essos'),
-    name: 'Essos Map - Game of Thrones Eastern Continent',
-    description: 'Explore the complete Essos map from Game of Thrones featuring the Free Cities and all major locations.'
+    name: ESSOS_TITLE,
+    description: ESSOS_DESCRIPTION
   });
 
   return (

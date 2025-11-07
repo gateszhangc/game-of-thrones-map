@@ -3,10 +3,14 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import type { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/react";
-import { SITE_DESCRIPTION, SITE_PRIMARY_TITLE_SUFFIX } from "../lib/seo/constants";
+import {
+  SITE_DESCRIPTION,
+  SITE_KEYWORDS,
+  SITE_PRIMARY_TITLE_SUFFIX,
+  SITE_URL
+} from "../lib/seo/constants";
 import Footer from "./components/Footer";
 
-const SITE_URL = "https://thegameofthronesmap.com";
 const PAGE_TITLE = `Game of Thrones Map | ${SITE_PRIMARY_TITLE_SUFFIX}`;
 const PAGE_DESCRIPTION = SITE_DESCRIPTION;
 const GA_MEASUREMENT_ID = "G-B1WMBOGCV1";
@@ -44,16 +48,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: PAGE_TITLE,
-    template: "%s | Game of Thrones Map"
+    template: "%s"
   },
   description: PAGE_DESCRIPTION,
   keywords: [
-    "Game of Thrones map",
-    "Westeros map",
-    "Essos map",
-    "Seven Kingdoms atlas",
-    "Game of Thrones locations",
-    "A Song of Ice and Fire geography"
+    ...SITE_KEYWORDS
   ],
   authors: [{ name: "Game of Thrones Map" }],
   alternates: {
@@ -103,7 +102,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="stylesheet" href="/css/style.css" />
       </head>
       <body suppressHydrationWarning>
-        <script
+        <Script
+          id="clarity-script"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (function(c,l,a,r,i,t,y){

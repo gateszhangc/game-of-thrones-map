@@ -6,27 +6,34 @@ import Header from '../components/Header';
 import { houses } from './data';
 import { generateSEOMetadata, getCanonicalUrl } from '../../lib/seo/metadata';
 import { generateWebPageSchema } from '../../lib/seo/structured-data';
+import { getKeywordList } from '../../lib/seo/longTailKeywords';
 
 export const dynamic = 'force-static';
 
-export const metadata: Metadata = generateSEOMetadata({
-  title: 'Game of Thrones Houses Map - Great Houses of Westeros & Their Locations',
-  description: 'Explore the Great Houses of Westeros on the Game of Thrones map. Discover noble families like Stark, Lannister, Targaryen, and Baratheon with their sigils, words, and ancestral seats mapped across the Seven Kingdoms.',
-  keywords: [
+const HOUSES_TITLE = 'Game of Thrones Houses Map | Westeros Great Houses';
+const HOUSES_DESCRIPTION =
+  'Explore a Game of Thrones houses map highlighting Game of Thrones map with houses, great houses Westeros, and the full map of houses in Game of Thrones.';
+const HOUSES_KEYWORDS = getKeywordList(
+  [
     'game of thrones houses map',
     'game of thrones map with houses',
-    'great houses westeros',
-    'game of thrones map and houses',
     'map of houses in game of thrones'
   ],
+  3
+);
+
+export const metadata: Metadata = generateSEOMetadata({
+  title: HOUSES_TITLE,
+  description: HOUSES_DESCRIPTION,
+  keywords: HOUSES_KEYWORDS,
   canonicalUrl: getCanonicalUrl('/houses')
 });
 
 export default function HousesPage() {
   const pageSchema = generateWebPageSchema({
     url: getCanonicalUrl('/houses'),
-    name: 'Great Houses of Westeros - Game of Thrones Map',
-    description: 'Explore the Great Houses of Westeros and their locations on the Game of Thrones map.'
+    name: HOUSES_TITLE,
+    description: HOUSES_DESCRIPTION
   });
 
   return (

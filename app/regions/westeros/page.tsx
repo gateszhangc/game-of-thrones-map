@@ -9,25 +9,32 @@ import { westerosData } from './data';
 import { generateSEOMetadata, getCanonicalUrl } from '../../../lib/seo/metadata';
 import { generateWebPageSchema } from '../../../lib/seo/structured-data';
 import Script from 'next/script';
+import { getKeywordList } from '../../../lib/seo/longTailKeywords';
 
-export const metadata: Metadata = generateSEOMetadata({
-  title: 'Game of Thrones Westeros Map - Seven Kingdoms Locations & Geography',
-  description: 'Explore the complete Westeros map from Game of Thrones. Discover the Seven Kingdoms, from the frozen North and The Wall to King\'s Landing and Dorne. Interactive map of Westeros locations, houses, and landmarks.',
-  keywords: [
+const WESTEROS_TITLE = 'Westeros Map | Game of Thrones Seven Kingdoms';
+const WESTEROS_DESCRIPTION =
+  'Explore the Game of Thrones Westeros map with the map of Game of Thrones Westeros, Seven Kingdoms map, and complete Game of Thrones 7 kingdoms map.';
+const WESTEROS_KEYWORDS = getKeywordList(
+  [
     'game of thrones westeros map',
     'map of game of thrones westeros',
-    'westeros map',
-    'seven kingdoms map',
     'game of thrones 7 kingdoms map'
   ],
+  3
+);
+
+export const metadata: Metadata = generateSEOMetadata({
+  title: WESTEROS_TITLE,
+  description: WESTEROS_DESCRIPTION,
+  keywords: WESTEROS_KEYWORDS,
   canonicalUrl: getCanonicalUrl('/regions/westeros')
 });
 
 export default function WesterosPage() {
   const pageSchema = generateWebPageSchema({
     url: getCanonicalUrl('/regions/westeros'),
-    name: 'Westeros Map - Game of Thrones Seven Kingdoms',
-    description: 'Explore the complete Westeros map from Game of Thrones featuring the Seven Kingdoms and all major locations.'
+    name: WESTEROS_TITLE,
+    description: WESTEROS_DESCRIPTION
   });
 
   return (

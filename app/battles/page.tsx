@@ -6,26 +6,34 @@ import Header from '../components/Header';
 import { battles } from './data';
 import { generateSEOMetadata, getCanonicalUrl } from '../../lib/seo/metadata';
 import { generateWebPageSchema } from '../../lib/seo/structured-data';
+import { getKeywordList } from '../../lib/seo/longTailKeywords';
 
 export const dynamic = 'force-static';
 
-export const metadata: Metadata = generateSEOMetadata({
-  title: 'Game of Thrones Battles Map - Historic Conflicts & Battle Locations',
-  description: 'Explore historic battles from Game of Thrones on an interactive map. Discover legendary conflicts like the Battle of the Bastards, Blackwater, and the War of the Five Kings with their locations across Westeros and Essos.',
-  keywords: [
-    'game of thrones battles',
+const BATTLES_TITLE = 'Game of Thrones Battles Map | Historic Battle Guide';
+const BATTLES_DESCRIPTION =
+  'Discover a Game of Thrones battles map covering game of thrones battle map highlights, historic battles Westeros, and the essential game of thrones war map.';
+const BATTLES_KEYWORDS = getKeywordList(
+  [
+    'game of thrones battles map',
     'game of thrones battle map',
-    'historic battles westeros',
-    'game of thrones war map'
+    'historic battles westeros'
   ],
+  3
+);
+
+export const metadata: Metadata = generateSEOMetadata({
+  title: BATTLES_TITLE,
+  description: BATTLES_DESCRIPTION,
+  keywords: BATTLES_KEYWORDS,
   canonicalUrl: getCanonicalUrl('/battles')
 });
 
 export default function BattlesPage() {
   const pageSchema = generateWebPageSchema({
     url: getCanonicalUrl('/battles'),
-    name: 'Historic Battles - Game of Thrones Map',
-    description: 'Explore historic battles from Game of Thrones and their locations on the map.'
+    name: BATTLES_TITLE,
+    description: BATTLES_DESCRIPTION
   });
 
   return (
