@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/images/got-map-hero.jpg",
+        url: "/images/got-map-hero.png",
         width: 1200,
         height: 630,
         alt: "Stylized Game of Thrones map spanning Westeros and Essos."
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: PAGE_TITLE,
     description: PAGE_DESCRIPTION,
-    images: ["/images/got-map-hero.jpg"]
+    images: ["/images/got-map-hero.png"]
   },
   robots: {
     index: true,
@@ -101,6 +101,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           rel="stylesheet"
         />
         <link rel="stylesheet" href="/css/style.css" />
+      </head>
+      <body suppressHydrationWarning>
         <Script
           id="google-gtag-src"
           strategy="afterInteractive"
@@ -114,8 +116,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             gtag('config', '${GA_MEASUREMENT_ID}');
           `}
         </Script>
-      </head>
-      <body suppressHydrationWarning>
         {children}
         <Footer />
         <Script id="site-structured-data" type="application/ld+json" strategy="beforeInteractive">

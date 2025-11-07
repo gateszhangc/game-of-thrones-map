@@ -64,7 +64,7 @@ function main() {
     [15, 25, 45, 255],
     [10, 15, 30, 255]
   );
-  writeFile("public/images/got-map-hero.jpg", hero);
+  writeFile("public/images/got-map-hero.png", hero);
 }
 
 main();
