@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Script from "next/script";
 import type { ReactNode } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import Footer from "./components/Footer";
 
 const SITE_URL = "https://thegameofthronesmap.com";
@@ -106,6 +107,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Script id="site-structured-data" type="application/ld+json" strategy="beforeInteractive">
           {JSON.stringify(structuredData)}
         </Script>
+        <Analytics />
       </body>
     </html>
   );
