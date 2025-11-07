@@ -33,38 +33,38 @@ export default function HousesPage() {
         {JSON.stringify(pageSchema)}
       </Script>
       <div className="page-wrapper">
-      <Header currentPage="Great Houses" />
+        <Header currentPage="Great Houses" />
 
-      <main>
-        {/* Hero Section */}
-        <section className="houses-hero">
-          <div className="houses-hero-content">
-            <h1 className="houses-hero-title">The Great Houses of Westeros</h1>
-            <p className="houses-hero-subtitle">Noble families that shaped the Seven Kingdoms</p>
-            <div className="ornament"></div>
-          </div>
-        </section>
+        <main>
+          {/* Hero Section */}
+          <section className="houses-hero">
+            <div className="houses-hero-content">
+              <h1 className="houses-hero-title">The Great Houses of Westeros</h1>
+              <p className="houses-hero-subtitle">Noble families that shaped the Seven Kingdoms</p>
+              <div className="ornament"></div>
+            </div>
+          </section>
 
-        {/* Houses Grid Section */}
-        <section className="houses-grid">
-          {houses.map((house) => (
-            <HouseCard key={house.name} house={house} />
-          ))}
-        </section>
+          {/* Houses Grid Section */}
+          <section className="houses-grid">
+            {houses.map((house) => (
+              <HouseCard key={house.name} house={house} />
+            ))}
+          </section>
 
-        {/* CTA Section */}
-        <section className="houses-cta">
-          <div className="cta-buttons">
-            <Link href="/#interactive-map" className="cta-button">
-              Explore Interactive Map
-            </Link>
-            <Link href="/battles" className="cta-button">
-              View Historic Battles
-            </Link>
-          </div>
-        </section>
-      </main>
-    </div>
+          {/* CTA Section */}
+          <section className="houses-cta">
+            <div className="cta-buttons">
+              <Link href="/locations" className="cta-button">
+                Explore Interactive Map
+              </Link>
+              <Link href="/battles" className="cta-button">
+                View Historic Battles
+              </Link>
+            </div>
+          </section>
+        </main>
+      </div>
     </>
   );
 }
