@@ -2897,7 +2897,7 @@ button:focus,
   width: 100%;
   height: auto;
   display: block;
-  min-height: 400px;
+  min-height: 560px;
   object-fit: cover;
 }
 
@@ -2948,7 +2948,7 @@ button:focus,
   }
   
   .map-preview-image {
-    min-height: 300px;
+    min-height: 360px;
   }
   
   .map-preview-text {
@@ -2957,5 +2957,11 @@ button:focus,
   
   .map-preview-icon {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-preview-image {
+    min-height: 260px;
   }
 }

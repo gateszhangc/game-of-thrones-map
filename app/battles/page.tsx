@@ -7,6 +7,8 @@ import { battles } from './data';
 import { generateSEOMetadata, getCanonicalUrl } from '../../lib/seo/metadata';
 import { generateWebPageSchema } from '../../lib/seo/structured-data';
 
+export const dynamic = 'force-static';
+
 export const metadata: Metadata = generateSEOMetadata({
   title: 'Game of Thrones Battles Map - Historic Conflicts & Battle Locations',
   description: 'Explore historic battles from Game of Thrones on an interactive map. Discover legendary conflicts like the Battle of the Bastards, Blackwater, and the War of the Five Kings with their locations across Westeros and Essos.',

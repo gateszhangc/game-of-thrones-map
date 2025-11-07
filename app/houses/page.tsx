@@ -7,6 +7,8 @@ import { houses } from './data';
 import { generateSEOMetadata, getCanonicalUrl } from '../../lib/seo/metadata';
 import { generateWebPageSchema } from '../../lib/seo/structured-data';
 
+export const dynamic = 'force-static';
+
 export const metadata: Metadata = generateSEOMetadata({
   title: 'Game of Thrones Houses Map - Great Houses of Westeros & Their Locations',
   description: 'Explore the Great Houses of Westeros on the Game of Thrones map. Discover noble families like Stark, Lannister, Targaryen, and Baratheon with their sigils, words, and ancestral seats mapped across the Seven Kingdoms.',

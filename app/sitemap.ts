@@ -4,7 +4,7 @@ import { SITE_URL } from '../lib/seo/constants';
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date().toISOString();
   
-  // 静态页面
+  // Static pages
   const staticPages = [
     {
       url: SITE_URL,
@@ -44,7 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // 地点页面
+  // Location pages
   const locationPages = [
     {
       url: `${SITE_URL}/locations`,
@@ -54,68 +54,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // 未来将添加的页面（暂时注释，等创建后取消注释）
-  const futurePages = [
-    // FAQ页面
-    // {
-    //   url: `${SITE_URL}/faq`,
-    //   lastModified: currentDate,
-    //   changeFrequency: 'monthly' as const,
-    //   priority: 0.7,
-    // },
-     
-    // 城市页面
-    // {
-    //   url: `${SITE_URL}/locations/kings-landing`,
-    //   lastModified: currentDate,
-    //   changeFrequency: 'monthly' as const,
-    //   priority: 0.7,
-    // },
-    // {
-    //   url: `${SITE_URL}/locations/dragonstone`,
-    //   lastModified: currentDate,
-    //   changeFrequency: 'monthly' as const,
-    //   priority: 0.6,
-    // },
-    // {
-    //   url: `${SITE_URL}/locations/qarth`,
-    //   lastModified: currentDate,
-    //   changeFrequency: 'monthly' as const,
-    //   priority: 0.6,
-    // },
-    // {
-    //   url: `${SITE_URL}/locations/volantis`,
-    //   lastModified: currentDate,
-    //   changeFrequency: 'monthly' as const,
-    //   priority: 0.6,
-    // },
-    // {
-    //   url: `${SITE_URL}/locations/oldtown`,
-    //   lastModified: currentDate,
-    //   changeFrequency: 'monthly' as const,
-    //   priority: 0.6,
-    // },
-     
-    // 专题页面
-    // {
-    //   url: `${SITE_URL}/regions/the-north`,
-    //   lastModified: currentDate,
-    //   changeFrequency: 'monthly' as const,
-    //   priority: 0.7,
-    // },
-    // {
-    //   url: `${SITE_URL}/regions/the-wall`,
-    //   lastModified: currentDate,
-    //   changeFrequency: 'monthly' as const,
-    //   priority: 0.7,
-    // },
-    // {
-    //   url: `${SITE_URL}/regions/valyria`,
-    //   lastModified: currentDate,
-    //   changeFrequency: 'monthly' as const,
-    //   priority: 0.7,
-    // },
-  ];
+  // Note: /houses-simple is a redirect page with robots: { index: false }, not included in sitemap
+  // Future pages (keep commented):
+  // FAQ page: /faq
+  // City pages: /locations/kings-landing, /locations/dragonstone, /locations/qarth, /locations/volantis, /locations/oldtown
+  // Special pages: /regions/the-north, /regions/the-wall, /regions/valyria
 
   return [...staticPages, ...locationPages];
 }

@@ -18,7 +18,7 @@ export default function Footer() {
           <h4>Explore</h4>
           <ul>
             <li><Link href="/">Home</Link></li>
-            <li><Link href="/#interactive-map">Map</Link></li>
+            <li><Link href="/locations">Map</Link></li>
             <li><Link href="/houses">Houses</Link></li>
             <li><Link href="/battles">Battles</Link></li>
             <li><Link href="/regions/westeros">Regions</Link></li>
