@@ -2838,26 +2838,27 @@ button:focus,
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  padding: 0rem;
   background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
 }
 
 /* iframe 样式 */
 .locations-iframe {
   width: 100%;
-  height: calc(100vh - 80px - 200px - 4rem);
-  min-height: 600px;
+  height: calc(100vh - 80px - 200px - 1rem);
+  min-height: 800px;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 @media (max-width: 768px) {
   .locations-map-section {
-    padding: 1rem;
+    padding: 0.25rem;
   }
   
   .locations-iframe {
     min-height: 500px;
+    border-radius: 2px;
   }
 }
 
