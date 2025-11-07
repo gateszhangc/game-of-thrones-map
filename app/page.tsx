@@ -2,8 +2,6 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
 import Header from "./components/Header";
-import ScrollButton from "./components/ScrollButton";
-import MapIframe from "./components/MapIframe";
 import { generateSEOMetadata, getCanonicalUrl } from "../lib/seo/metadata";
 import { generateWebPageSchema } from "../lib/seo/structured-data";
 import { SITE_URL } from "../lib/seo/constants";
@@ -23,12 +21,6 @@ export const metadata: Metadata = generateSEOMetadata({
   canonicalUrl: getCanonicalUrl("/")
 });
 
-
-const MAP_CONTROLS = [
-  { region: "westeros", label: "Westeros" },
-  { region: "essos", label: "Essos" },
-  { region: "north", label: "The North" }
-] as const;
 
 const FEATURE_CARDS = [
   {
@@ -84,21 +76,6 @@ const RESOURCE_LINKS = [
   }
 ] as const;
 
-const QUICK_LINKS = [
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Terms of Use", href: "/terms" },
-  { label: "Sitemap", href: "/sitemap.xml" }
-] as const;
-
-const SOCIAL_LINKS = [
-  { label: "Game of Thrones on X", href: "https://x.com/GameOfThrones", iconClassName: "twitter" },
-  { label: "Game of Thrones on Facebook", href: "https://www.facebook.com/GameOfThrones", iconClassName: "facebook" },
-  { label: "Game of Thrones on Instagram", href: "https://www.instagram.com/gameofthrones", iconClassName: "instagram" }
-] as const;
-
-const CONTACT_EMAIL = "hello@thegameofthronesmap.com";
-const CURRENT_YEAR = new Date().getFullYear();
-
 export default function Home() {
   const pageSchema = generateWebPageSchema({
     url: SITE_URL,
@@ -120,9 +97,9 @@ export default function Home() {
               <h1 id="hero-title">Game of Thrones Map: Explore the World of Ice and Fire</h1>
               <p className="hero-subtitle">Discover the complete Game of Thrones world map featuring the Seven Kingdoms, Westeros, Essos, and the interactive map of all major locations and houses.</p>
               <div className="hero-cta">
-                <ScrollButton targetId="interactive-map" className="cta-button">
+                <Link href="/locations" className="cta-button">
                   Explore Map
-                </ScrollButton>
+                </Link>
                 <Link href="/houses" className="cta-button secondary">
                   View Houses
                 </Link>
@@ -135,29 +112,39 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="interactive-map" className="interactive-map-section" aria-labelledby="interactive-map-title">
+          <section className="map-preview-section" aria-labelledby="map-preview-title">
             <div className="section-header">
-              <h2 id="interactive-map-title">Interactive Map</h2>
+              <h2 id="map-preview-title">Interactive Map</h2>
               <div className="ornament" aria-hidden="true" />
             </div>
-
-            <div className="map-container">
-              <MapIframe />
-              
-              <div className="map-attribution">
-                <p>
-                  Interactive map powered by{' '}
-                  <a 
-                    href="https://quartermaester.info/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="map-link"
-                  >
-                    Quarter Maester
-                  </a>
-                  {' '}• Explore character journeys, locations, and timelines
-                </p>
+            
+            <Link href="/locations" className="map-preview-link">
+              <div className="map-preview-container">
+                <img 
+                  src="/images/map-placeholder.png" 
+                  alt="Game of Thrones Interactive Map Preview"
+                  className="map-preview-image"
+                />
+                <div className="map-preview-overlay">
+                  <span className="map-preview-text">点击探索完整地图</span>
+                  <span className="map-preview-icon">🗺️</span>
+                </div>
               </div>
+            </Link>
+            
+            <div className="map-attribution">
+              <p>
+                Interactive map powered by{' '}
+                <a 
+                  href="https://quartermaester.info/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="map-link"
+                >
+                  Quarter Maester
+                </a>
+                {' '}• Explore character journeys, locations, and timelines
+              </p>
             </div>
           </section>
 
