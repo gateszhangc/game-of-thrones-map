@@ -9,6 +9,7 @@ const SITE_URL = "https://thegameofthronesmap.com";
 const PAGE_TITLE = "Game of Thrones Map - Interactive Atlas of Westeros and Essos";
 const PAGE_DESCRIPTION =
   "Explore the detailed interactive map of Game of Thrones. Discover all locations from Westeros to Essos, including major houses, cities, and historical landmarks.";
+const GA_MEASUREMENT_ID = "G-B1WMBOGCV1";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -100,6 +101,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           rel="stylesheet"
         />
         <link rel="stylesheet" href="/css/style.css" />
+        <Script
+          id="google-gtag-src"
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        />
+        <Script id="google-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
       </head>
       <body suppressHydrationWarning>
         {children}
