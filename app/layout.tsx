@@ -85,7 +85,11 @@ export const metadata: Metadata = {
     follow: true
   },
   category: "entertainment",
-
+  icons: {
+    icon: "/pics/340-3408649_house-targaryen-png-photos-game-of-thrones-targaryen.png",
+    shortcut: "/pics/340-3408649_house-targaryen-png-photos-game-of-thrones-targaryen.png",
+    apple: "/pics/340-3408649_house-targaryen-png-photos-game-of-thrones-targaryen.png"
+  }
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
