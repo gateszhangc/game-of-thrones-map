@@ -4,12 +4,14 @@ import RegionOverview from '../components/RegionOverview';
 import RegionSection from '../components/RegionSection';
 import RelatedPages from '../components/RelatedPages';
 import Header from '../../components/Header';
+import AffiliateInlineCard from '../../components/AffiliateInlineCard';
 import { essosData } from './data';
 
 import { generateSEOMetadata, getCanonicalUrl } from '../../../lib/seo/metadata';
 import { generateWebPageSchema } from '../../../lib/seo/structured-data';
 import Script from 'next/script';
 import { getKeywordList } from '../../../lib/seo/longTailKeywords';
+import { AFFILIATE_COPY } from '../../../lib/affiliate';
 
 const ESSOS_TITLE = 'Essos Map | Game of Thrones Free Cities';
 const ESSOS_DESCRIPTION =
@@ -53,6 +55,14 @@ export default function EssosPage() {
         />
 
         <RegionOverview overview={essosData.overview} />
+
+        <AffiliateInlineCard
+          title={AFFILIATE_COPY.inlineCard.title}
+          description={AFFILIATE_COPY.inlineCard.description}
+          ctaLabel={AFFILIATE_COPY.inlineCard.cta}
+          placementId="region-inline"
+          compact
+        />
 
         {essosData.sections.map((section) => (
           <RegionSection

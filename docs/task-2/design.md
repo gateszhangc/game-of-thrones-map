@@ -22,18 +22,18 @@
 │  [CTA] Explore Map   [CTA] View Houses                       │
 ├──────────────────────────────────────────────────────────────┤
 │ Affiliate Banner                                             │
-│  Title: Save up to 60% on select plans                       │
-│  Sub: Verified sellers · Pre‑checked accounts                │
-│       Instant delivery · Secure checkout                     │
-│  Trust line: SSL encryption · PCI DSS v4.0                   │
+│  Title: Shared premium subscriptions at a lower price         │
+│  Sub: Real-time delivery after payment                        │
+│       Secure checkout with SSL certificate                    │
+│  Trust line: 24/7 live support | Refunds within 24 hours      │
 │  [Button] Visit GamsGo                                       │
 │  * Disclosure: We may earn a commission at no extra cost.    │
 ├──────────────────────────────────────────────────────────────┤
 │ Recommended Resources                                       │
 │  ...                                                        │
 │  [Card] GamsGo                                               │
-│   Copy: 80+ digital services · Trusted by 2M+ users           │
-│         Up to 60% off official prices (select plans)          │
+│   Copy: Get premium subscriptions at a lower price            │
+│         Real-time delivery | 24/7 live support                │
 │   [Button] Visit GamsGo                                       │
 │   * Disclosure: We may earn a commission at no extra cost.    │
 └──────────────────────────────────────────────────────────────┘
@@ -43,7 +43,7 @@
 ```
 [Shows after 50% scroll]
 ┌────────────────────────────────────────────┐
-│ Save up to 60% on select plans · Visit GamsGo [Visit] │
+│ Lower-price subscriptions | Visit GamsGo [Visit] │
 │ * Disclosure: We may earn a commission at no extra cost. │
 └────────────────────────────────────────────┘
 ```
@@ -55,7 +55,7 @@
 ├────────────────────────────────────────────┤
 │ Compact CTA Card                           │
 │ Title: Stream more for less                │
-│ Sub: Up to 60% off official prices (select plans) │
+│ Sub: Shared premium subscriptions at a lower price │
 │ [Button] Visit GamsGo                      │
 │ * Disclosure: We may earn a commission at no extra cost. │
 └────────────────────────────────────────────┘
@@ -68,7 +68,7 @@
 ├────────────────────────────────────────────┤
 │ Small Support Card                         │
 │ Title: Save on subscriptions               │
-│ Sub: Verified sellers · Instant delivery    │
+│ Sub: Real-time delivery | Refunds within 24 hours │
 │ [Button] Visit GamsGo                      │
 │ * Disclosure: We may earn a commission at no extra cost. │
 └────────────────────────────────────────────┘
@@ -87,14 +87,14 @@
 ## 文案变体（A/B，用于最大化转化）
 
 ### Banner Headline
-- A: Save up to 60% on select plans
-- B: Lower official prices on select subscriptions
-- C: Stream more for less (select plans)
+- A: Shared premium subscriptions at a lower price
+- B: Stream more for less on GamsGo
+- C: Lower-price subscriptions, delivered instantly
 
 ### Banner Subheadline
-- A: Verified sellers · Pre‑checked accounts · Instant delivery
-- B: Secure checkout (SSL + PCI DSS v4.0)
-- C: Trusted by 2M+ users · 80+ digital services
+- A: Real-time delivery after payment
+- B: Secure checkout with SSL certificate
+- C: 24/7 live support | Refunds within 24 hours
 
 ### CTA
 - A: Visit GamsGo
@@ -105,4 +105,3 @@
 - 是否允许使用“save / lower price / discount”等词（如有禁用词需替换）。
 - 是否允许添加 promo code 文案。
 - 是否可使用官方 Logo 或品牌色。
-- 是否允许将“2M+ users / 80+ services / PCI DSS v4.0”作为信任背书。

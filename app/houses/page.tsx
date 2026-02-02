@@ -3,10 +3,12 @@ import Link from 'next/link';
 import Script from 'next/script';
 import HouseCard from './HouseCard';
 import Header from '../components/Header';
+import AffiliateInlineCard from '../components/AffiliateInlineCard';
 import { houses } from './data';
 import { generateSEOMetadata, getCanonicalUrl } from '../../lib/seo/metadata';
 import { generateWebPageSchema } from '../../lib/seo/structured-data';
 import { getKeywordList } from '../../lib/seo/longTailKeywords';
+import { AFFILIATE_COPY } from '../../lib/affiliate';
 
 export const dynamic = 'force-static';
 
@@ -53,6 +55,14 @@ export default function HousesPage() {
               <div className="ornament"></div>
             </div>
           </section>
+
+          <AffiliateInlineCard
+            title={AFFILIATE_COPY.supportCard.title}
+            description={AFFILIATE_COPY.supportCard.description}
+            ctaLabel={AFFILIATE_COPY.supportCard.cta}
+            placementId="content-inline"
+            compact
+          />
 
           {/* Houses Grid Section */}
           <section className="houses-grid">

@@ -2,6 +2,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
 import Header from "./components/Header";
+import AffiliateBanner from "./components/AffiliateBanner";
+import AffiliateLink from "./components/AffiliateLink";
 import { generateSEOMetadata, getCanonicalUrl } from "../lib/seo/metadata";
 import { generateWebPageSchema } from "../lib/seo/structured-data";
 import {
@@ -10,6 +12,7 @@ import {
   SITE_PRIMARY_TITLE_SUFFIX,
   SITE_URL
 } from "../lib/seo/constants";
+import { AFFILIATE_COPY, AFFILIATE_DISCLOSURE, AFFILIATE_URL } from "../lib/affiliate";
 
 const HOME_TITLE = `Game of Thrones Map | ${SITE_PRIMARY_TITLE_SUFFIX}`;
 const HOME_DESCRIPTION = SITE_DESCRIPTION;
@@ -53,7 +56,16 @@ const FEATURE_CARDS = [
   }
 ] as const;
 
-const RESOURCE_LINKS = [
+type ResourceLink = {
+  title: string;
+  description: string;
+  href: string;
+  ctaLabel?: string;
+  isAffiliate?: boolean;
+  placementId?: string;
+};
+
+const RESOURCE_LINKS: ResourceLink[] = [
   {
     title: "Official HBO Map",
     description: "The official interactive viewer's guide map from HBO.",
@@ -73,8 +85,16 @@ const RESOURCE_LINKS = [
     title: "GOT Wiki Maps",
     description: "Collection of maps from the Game of Thrones Wiki.",
     href: "https://gameofthrones.fandom.com/wiki/Category:Maps"
+  },
+  {
+    title: AFFILIATE_COPY.resourceCard.title,
+    description: AFFILIATE_COPY.resourceCard.description,
+    href: AFFILIATE_URL,
+    ctaLabel: AFFILIATE_COPY.resourceCard.cta,
+    isAffiliate: true,
+    placementId: "home-resources"
   }
-] as const;
+];
 
 export default function Home() {
   const pageSchema = generateWebPageSchema({
@@ -111,6 +131,8 @@ export default function Home() {
               <div className="scroll-arrow" />
             </div>
           </section>
+
+          <AffiliateBanner />
 
           <section className="map-preview-section" aria-labelledby="map-preview-title">
             <div className="section-header">
@@ -175,15 +197,36 @@ export default function Home() {
             </div>
 
             <div className="resources-grid">
-              {RESOURCE_LINKS.map((resource) => (
-                <article key={resource.href} className="resource-card">
-                  <h3>{resource.title}</h3>
-                  <p>{resource.description}</p>
-                  <a href={resource.href} className="resource-link" target="_blank" rel="noopener noreferrer nofollow">
-                    Visit Site
-                  </a>
-                </article>
-              ))}
+              {RESOURCE_LINKS.map((resource) => {
+                const isAffiliate = "isAffiliate" in resource && resource.isAffiliate;
+                const className = `resource-card${isAffiliate ? " affiliate-resource-card" : ""}`;
+                const ctaLabel = resource.ctaLabel ?? "Visit Site";
+
+                return (
+                  <article key={resource.href} className={className}>
+                    <h3>{resource.title}</h3>
+                    <p>{resource.description}</p>
+                    {isAffiliate && (
+                      <p className="affiliate-disclosure">{AFFILIATE_DISCLOSURE}</p>
+                    )}
+                    {isAffiliate ? (
+                      <AffiliateLink
+                        href={resource.href}
+                        placementId={resource.placementId ?? "home-resources"}
+                        ctaVariant="value-v1"
+                        className="resource-link"
+                        ariaLabel="Visit GamsGo via our partner link"
+                      >
+                        {ctaLabel}
+                      </AffiliateLink>
+                    ) : (
+                      <a href={resource.href} className="resource-link" target="_blank" rel="noopener noreferrer nofollow">
+                        {ctaLabel}
+                      </a>
+                    )}
+                  </article>
+                );
+              })}
             </div>
           </section>
         </main>

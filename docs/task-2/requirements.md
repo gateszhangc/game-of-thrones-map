@@ -17,18 +17,19 @@
 - 需遵循 GamsGo affiliate 文档的渠道/文案/素材/追踪要求。
 - 所有外链使用 `target="_blank"` + `rel="noopener noreferrer nofollow"`。
 
-## 可引用的官网表述（待与 overview 文档对齐）
-- “Up to 60% off the official price (select plans).”
-- “Instant delivery.”
-- “Bank-level SSL encryption” + “PCI DSS v4.0 compliance.”
-- “All sellers are verified” + “accounts are pre-checked for validity.”
-- “Served over 2 million users worldwide.”
-- “80+ digital services.”
+## 可引用的官网表述（基于 gamsgo.com 首页可验证文案）
+- “Shared premium subscriptions with lower price on GamsGo.”
+- “Real-time delivery after payment without waiting.”
+- “SSL certificate” + “Payments take place in a secure environment.”
+- “24/7 live support.”
+- “Refund guarantee” + “refunds available within 24 hours.”
+- “Get premium subscription at lower price.”
 
 ## 文案使用边界
-- “Up to 60% off” 必须加“select plans/official price”限定语。
-- “Secure transactions” 必须关联官网的 SSL/PCI 表述，避免泛化。
-- 不写“保证/风险为零/必然退款”等绝对承诺。
+- 仅使用官网明确出现的措辞或等义转述（不要虚构折扣百分比）。
+- “Refund guarantee” 必须保留 “within 24 hours” 的限定语。
+- “Secure environment” 需关联 SSL 证书表述，避免泛化为“银行级”。
+- 不写“保证/零风险/必然退款”等绝对承诺。
 
 ## 受众与场景
 - 首次访问用户（首页 Hero 下方强入口）。

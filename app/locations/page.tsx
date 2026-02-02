@@ -1,10 +1,12 @@
 import { Metadata } from "next";
 import Script from "next/script";
 import Header from "../components/Header";
+import AffiliateInlineCard from "../components/AffiliateInlineCard";
 import { generateSEOMetadata, getCanonicalUrl } from "../../lib/seo/metadata";
 import { generateWebPageSchema } from "../../lib/seo/structured-data";
 import { SITE_URL } from "../../lib/seo/constants";
 import { getKeywordList } from "../../lib/seo/longTailKeywords";
+import { AFFILIATE_COPY } from "../../lib/affiliate";
 
 const LOCATION_TITLE = "Game of Thrones Locations Map | Westeros & Essos";
 const LOCATION_DESCRIPTION =
@@ -48,6 +50,13 @@ export default function LocationsPage() {
               allow="fullscreen"
             />
           </section>
+          <AffiliateInlineCard
+            title={AFFILIATE_COPY.inlineCard.title}
+            description={AFFILIATE_COPY.inlineCard.description}
+            ctaLabel={AFFILIATE_COPY.inlineCard.cta}
+            placementId="map-below"
+            compact
+          />
         </main>
       </div>
     </>

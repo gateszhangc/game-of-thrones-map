@@ -3,7 +3,7 @@
 ## 阶段 0：需求确认
 - [ ] 从 https://www.gamsgo.com/zh/affiliate/overview 获取明确条款（文案/渠道/追踪/素材）
 - [ ] 确认是否允许深度链接、UTM/subId、promo code 展示
- - [ ] 核验官网文案可用条款（60% off、2M+ users、80+ services、SSL/PCI 等）
+- [ ] 核验官网文案可用条款（lower price、real-time delivery、SSL certificate、refunds within 24 hours 等）
 
 ## 阶段 1：内容与结构
 - [ ] 定义 CTA 文案版本（收入最大化导向）

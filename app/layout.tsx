@@ -10,6 +10,7 @@ import {
   SITE_URL
 } from "../lib/seo/constants";
 import Footer from "./components/Footer";
+import AffiliateStickyCTA from "./components/AffiliateStickyCTA";
 
 const PAGE_TITLE = `Game of Thrones Map | ${SITE_PRIMARY_TITLE_SUFFIX}`;
 const PAGE_DESCRIPTION = SITE_DESCRIPTION;
@@ -136,6 +137,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
         {children}
         <Footer />
+        <AffiliateStickyCTA />
         <Script id="site-structured-data" type="application/ld+json" strategy="beforeInteractive">
           {JSON.stringify(structuredData)}
         </Script>
