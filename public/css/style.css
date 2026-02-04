@@ -687,6 +687,88 @@ section {
 /* ===================================
    Affiliate Placements
    =================================== */
+.affiliate-topbar {
+    position: relative;
+    z-index: 1200;
+    background: linear-gradient(135deg, rgba(244, 232, 208, 0.98), rgba(232, 220, 192, 0.98));
+    border-bottom: 3px solid var(--secondary-color);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    transform: translateY(-110%);
+    opacity: 0;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.affiliate-topbar.is-visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.affiliate-topbar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.85rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.affiliate-topbar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.affiliate-topbar-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+}
+
+.affiliate-topbar-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.affiliate-topbar-subtitle {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.affiliate-topbar .affiliate-disclosure {
+    margin-top: 0.2rem;
+    font-size: 0.7rem;
+}
+
+.affiliate-topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.affiliate-topbar-cta {
+    padding: 0.65rem 1.6rem;
+    font-size: 0.9rem;
+}
+
+.affiliate-topbar-close {
+    background: transparent;
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    border-radius: 4px;
+    padding: 0.2rem 0.55rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.affiliate-topbar-close:hover {
+    background: var(--secondary-color);
+    color: var(--light-text);
+}
 
 .affiliate-banner {
     padding: 3.5rem 2rem;
@@ -871,6 +953,16 @@ section {
 }
 
 @media (max-width: 900px) {
+    .affiliate-topbar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .affiliate-topbar-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
     .affiliate-banner-inner,
     .affiliate-card {
         grid-template-columns: 1fr;

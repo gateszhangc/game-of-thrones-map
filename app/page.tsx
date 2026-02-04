@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
 import Header from "./components/Header";
+import AffiliateTopBar from "./components/AffiliateTopBar";
 import AffiliateBanner from "./components/AffiliateBanner";
 import AffiliateLink from "./components/AffiliateLink";
 import { generateSEOMetadata, getCanonicalUrl } from "../lib/seo/metadata";
@@ -109,6 +110,7 @@ export default function Home() {
         {JSON.stringify(pageSchema)}
       </Script>
       <div className="page-wrapper">
+        <AffiliateTopBar />
         <Header currentPage="Home" />
 
         <main id="main-content">

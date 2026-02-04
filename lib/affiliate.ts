@@ -26,5 +26,10 @@ export const AFFILIATE_COPY = {
   sticky: {
     text: "Lower-price subscriptions",
     cta: "Visit"
+  },
+  topBar: {
+    title: "Shared premium subscriptions at a lower price",
+    subtitle: "Real-time delivery | 24/7 live support | Refunds within 24 hours",
+    cta: "Visit GamsGo"
   }
 } as const;
